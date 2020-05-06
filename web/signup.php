@@ -169,7 +169,7 @@ if ( isset($data['do_signup']) )
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
 		//echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-		echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/login "> ';
+		echo '<meta http-equiv="refresh" content="0;url= https://mynewwishlists.herokuapp.com/login.php "> ';
 	}else
 	{
 		echo '
@@ -188,7 +188,7 @@ if ( isset($data['do_signup']) )
 <div class="row">
 	<div class="col-md-4 offset-md-4 text-center registrationForm">
 		<h2>Регистрация</h2>
-		<form action="signup " method="POST">
+		<form action="https://mynewwishlists.herokuapp.com/signup.php " method="POST">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
