@@ -1,17 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  grffvygbhnjmk nkm
+</body>
+</html>
+<?php require_once('dependence.php')
+
+$cat = R::load('users', 30);
+R::trash($cat);
 
 
 
-
-<?php
-
-require 'libs/rb.php';
-
-
-require_once('dependence.php');
-try{
-  $db = new PDO('mysql:host=us-cdbr-east-06.cleardb.net;dbname=heroku_8577067324d828a','be0fd66079ab9f','ed9d44bd');
-  echo "всё ок";
-} catch(PDOException $e){
-  echo $e->getmessage();
-}
 ?>
