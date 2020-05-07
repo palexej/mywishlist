@@ -14,7 +14,7 @@
 // $user->surname = "alexeyyyy";
 // //
 
--- // R::store($user);
+
 $beans=array();
 $beans[]=R::dispense('users');
 $beans[0]->login='Hello World!';
