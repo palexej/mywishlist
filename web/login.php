@@ -37,7 +37,7 @@ body {
 			</ul>
 			<ul class="navbar-nav ">
 				<li class="nav-item">
-					<a class="nav-link" href="https://mynewwishlists.herokuapp.com/signup.php">
+					<a class="nav-link" href="https://awishlist.herokuapp.com/signup.php">
 						<i class="fa fa-fw fa-user-plus"></i>
 						Регистрация
 					</a>
@@ -45,7 +45,7 @@ body {
 			</ul>
 			<ul class="navbar-nav ">
 				<li class="nav-item">
-					<a class="nav-link" href="https://mynewwishlists.herokuapp.com/login.php">
+					<a class="nav-link" href="https://awishlist.herokuapp.com/login.php">
 						<i class="fa fa-fw fa-sign-in-alt"></i>
 						Авторизация
 					</a>
@@ -66,7 +66,7 @@ if ( isset($data['do_login']) )
 		if ( password_verify($data['password'], $user->password) )//обратная дешифровка
 		{
 			$_SESSION['logged_user'] = $user;//если пароль совпадает, то нужно авторизовать пользователя
-			header('Location: https://mynewwishlists.herokuapp.com/upload.php ');
+			header('Location: https://awishlist.herokuapp.com/upload.php ');
 		}
 		else
 		{
@@ -97,7 +97,7 @@ if ( isset($data['do_login']) )
 <div class="row">
 	<div class="col-md-4 offset-md-4 text-center  text-center loginForm">
 		<h2>Вход</h2>
-		<form action="https://mynewwishlists.herokuapp.com/login.php" method="POST">
+		<form action="https://awishlist.herokuapp.com/login.php" method="POST">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
