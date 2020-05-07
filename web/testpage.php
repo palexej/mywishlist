@@ -13,9 +13,13 @@
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
 // //
-R::exec( 'INSERT INTO  users(id,login) VALUES(50,'helloddd') );
--- // R::store($user);
 
+-- // R::store($user);
+$beans=array();
+$beans[]=R::dispense('users');
+$beans[0]->login='Hello World!';
+$beans[1]->password='Hello World!1';
+R::storeAll($beans);
 
 
 ?>
