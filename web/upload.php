@@ -255,7 +255,7 @@
 
   if (isset($data['addWishToList'])) {
     $_SESSION['addWishToList']=$data['addWishToList'];
-    echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/addWishToList "> ';
+    echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/addWishToList.php "> ';
 
   }
 
