@@ -9,9 +9,10 @@
 </body>
 </html>
 <?php require_once('dependence.php')
-//
-// $cat = R::load('users', 30);
-// R::trash($cat);
+$user = R::dispense('users');//автоматическое создание таблицы пользователей
+//автоинкремент автоматически создается
+$user->surname = "alexeyyyy";
+R::store($user);
 
 
 
