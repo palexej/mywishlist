@@ -9,10 +9,12 @@
 </body>
 </html>
 <?php require_once('dependence.php')
-$user = R::dispense('users');//автоматическое создание таблицы пользователей
-//автоинкремент автоматически создается
-$user->surname = "alexeyyyy";
-R::store($user);
+// $user = R::dispense('users');//автоматическое создание таблицы пользователей
+// //автоинкремент автоматически создается
+// $user->surname = "alexeyyyy";
+// //
+R::exec( 'UPDATE users SET login="hislog" WHERE id = 30' );
+// R::store($user);
 
 
 
