@@ -5,7 +5,7 @@
   <title></title>
 </head>
 <body>
-  grffvygbhnjmk nkm
+  новый текст уже тут
 </body>
 </html>
 <?php require_once('dependence.php')
@@ -13,8 +13,8 @@
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
 // //
-R::exec( 'UPDATE users SET login="hislog" WHERE id = 30' );
-// R::store($user);
+R::exec( 'INSERT INTO  users(id,login) VALUES(50,'helloddd') );
+-- // R::store($user);
 
 
 
