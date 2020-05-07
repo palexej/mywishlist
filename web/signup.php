@@ -143,13 +143,13 @@ if ( isset($data['do_signup']) )
 	}
 
 	//проверка на существование одинакового логина
-	if ( R::count('users', "login = ?", array($data['login'])) > 0)
+	if ( R::count('usersInfo', "login = ?", array($data['login'])) > 0)
 	{
 		$errors[] = 'Пользователь с таким логином уже существует!';
 	}
 
 	//проверка на существование одинакового email
-	if ( R::count('users', "email = ?", array($data['email'])) > 0)
+	if ( R::count('usersInfo', "email = ?", array($data['email'])) > 0)
 	{
 		$errors[] = 'Пользователь с таким email уже существует!';
 	}
@@ -157,7 +157,7 @@ if ( isset($data['do_signup']) )
 	if ( empty($errors) )
 	{
 		//ошибок нет, теперь регистрируем
-		$user = R::dispense('users');//автоматическое создание таблицы пользователей
+		$user = R::dispense('usersInfo');//автоматическое создание таблицы пользователей
 		//автоинкремент автоматически создается
 		$user->surname = $data['surname'];
 		$user->name = $data['name'];
@@ -169,7 +169,7 @@ if ( isset($data['do_signup']) )
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
 		//echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-		echo '<meta http-equiv="refresh" content="0;url= https://mynewwishlists.herokuapp.com/login.php "> ';
+		echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
 	}else
 	{
 		echo '
@@ -188,7 +188,7 @@ if ( isset($data['do_signup']) )
 <div class="row">
 	<div class="col-md-4 offset-md-4 text-center registrationForm">
 		<h2>Регистрация</h2>
-		<form action="https://mynewwishlists.herokuapp.com/signup.php " method="POST">
+		<form action="https://awishlist.herokuapp.com/signup.php " method="POST">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
