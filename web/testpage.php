@@ -9,9 +9,9 @@
 </body>
 </html>
 <?php require_once('dependence.php')
-
-$cat = R::load('users', 30);
-R::trash($cat);
+//
+// $cat = R::load('users', 30);
+// R::trash($cat);
 
 
 
