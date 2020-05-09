@@ -8,9 +8,10 @@
 
 </head>
 <body>
-  <form method="post">
+  <form method="post" action="google.php">
     <input type="hidden" id="g-token" name="g-token" />
-    <button type="submit" name="subBtn"></button>
+    <input type="text" name="name" value="">имяяяя</input>
+    <button type="submit" name="subBtn">текст</button>
 
   </form>
 
