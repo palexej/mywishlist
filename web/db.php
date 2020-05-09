@@ -6,5 +6,5 @@ if ( !R::testconnection() )
 {
 		exit ('Нет соединения с базой данных');
 }
-R::freeze(true);
+R::freeze(false);
 session_start();

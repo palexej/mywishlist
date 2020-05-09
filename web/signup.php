@@ -59,7 +59,7 @@ body {
 
 
 $data = $_POST;
-R::freeze(true);
+
 //если кликнули на button
 if ( isset($data['do_signup']) )
 {
