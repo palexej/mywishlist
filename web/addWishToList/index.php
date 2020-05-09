@@ -147,7 +147,7 @@
 
         R::store($addWish);
 
-        echo '<meta http-equiv="refresh" content="1;url= http://awishlist/upload.php "> ';
+        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/upload.php "> ';
 
       }else
       {
@@ -165,7 +165,7 @@
     <div class="row">
       <div class="col-md-4 offset-md-4 text-center  text-center WishList">
         <h2>Добавить новое желание</h2>
-        <form action="https://awishlist.herokuapp.com/addWishToList.php " method="post" enctype="multipart/form-data">
+        <form action="https://awishlist.herokuapp.com/addWishToList/index.php " method="post" enctype="multipart/form-data">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text bg-white"><i class="fa fa-gift"></i></span>
