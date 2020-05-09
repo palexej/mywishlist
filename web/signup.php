@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<?php require_once 'dependence.php';
-	require_once "recaptchalib.php"; ?>
+	?>
 
 
 	<title>Регистрация</title>
@@ -157,29 +157,18 @@ if ( isset($data['do_signup']) )
 		$errors[] = 'Пользователь с таким email уже существует!';
 	}
 
-	$secret = "6LeKaREUAAAAAGgPekvD1djRejSXufWqghauFg7-";
-	//ответ
-	$response = null;
-	//проверка секретного ключа
-	$reCaptcha = new ReCaptcha($secret);
-
-	if (!empty($_POST)) {
-
-		if ($_POST["g-recaptcha-response"]) {
-			$response = $reCaptcha->verifyResponse(
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["g-recaptcha-response"]
-			);
+	if (isset($_POST['g-recaptcha-response'])&&$_POST['g-recaptcha-response'])
+	{
+		$secret = '6LdH0_QUAAAAAC2Te54Q_xUz3tM0Czs7kOUsEwv9';
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$response = $_POST['g-recaptcha-response'];
+		$rsp = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&amp;response=$response&amp;remoteip=$ip");
+		$arr = json_decode($rsp, TRUE);
+		if ($arr['success']!=TRUE)
+		{
+			$errors[] = 'Ошибка ввода капчи';
 		}
-
-		if ($response != null && $response->success) {
-			echo "Все хорошо.";
-		} else {
-			$errors[] = 'Неверно введена капча';
-		}
-
 	}
-
 	if ( empty($errors) )
 	{
 
@@ -264,7 +253,8 @@ if ( isset($data['do_signup']) )
 				</div>
 				<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
 			</div>
-			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X"></div>
+			<br>
+			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X" style="margin-bottom:1em";></div>
 			<br>
 			<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
 		</form>
