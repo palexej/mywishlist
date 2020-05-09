@@ -32,7 +32,7 @@ document.getElementById("g-token").value = token;
 
   <form method="post" action="google.php">
     <input type="email">
-    <div class="g-recaptcha" data-sitekey="6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH"></div>
+    <div class="g-recaptcha" data-sitekey="КЛЮЧ_САЙТА"></div>
     <button type="submit">Отправить</button>
   </form>
 

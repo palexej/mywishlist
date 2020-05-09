@@ -156,19 +156,23 @@ if ( isset($data['do_signup']) )
 	{
 		$errors[] = 'Пользователь с таким email уже существует!';
 	}
+	$error = true;
+	$secret = '6LdM2_QUAAAAAAMioaLtkyiYP-BoHxD9NYNE1rUf';
 
-	if (isset($_POST['g-recaptcha-response'])&&$_POST['g-recaptcha-response'])
-	{
-		$secret = '6LdH0_QUAAAAAC2Te54Q_xUz3tM0Czs7kOUsEwv9';
-		$ip = $_SERVER['REMOTE_ADDR'];
-		$response = $_POST['g-recaptcha-response'];
-		$rsp = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&amp;response=$response&amp;remoteip=$ip");
-		$arr = json_decode($rsp, TRUE);
-		if ($arr['success']!=TRUE)
-		{
-			$errors[] = 'Ошибка ввода капчи';
+	if (!empty($_POST['g-recaptcha-response'])) {
+		$out = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+		$out = json_decode($out);
+		if ($out->success == true) {
+			$error = false;
 		}
 	}
+
+	if ($error) {
+		$errors[] = 'Ошибка заполнения капчи.';
+	}
+
+
+
 	if ( empty($errors) )
 	{
 
@@ -254,7 +258,7 @@ if ( isset($data['do_signup']) )
 				<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
 			</div>
 			<br>
-			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X" ></div>
+			<div class="g-recaptcha" data-sitekey="6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH"></div>
 			<br>
 			<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
 		</form>
