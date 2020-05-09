@@ -76,8 +76,8 @@
         <br>
         <h2 style="text-align:center">Ваши списки желаний</h2>
         <br>
-        <form  action="upload " method="post">
-          <a href="http://awishlist/authAndLogin/createWishList" name="createWishList" class="btn btn-success btn-block" role="button" aria-pressed="true"><i class="fa fa-fw fa-plus-square"></i>Создать новый список желаний</a>
+        <form  action="https://awishlist.herokuapp.com/upload.php " method="post">
+          <a href="https://awishlist.herokuapp.com/createWishList.php" name="createWishList" class="btn btn-success btn-block" role="button" aria-pressed="true"><i class="fa fa-fw fa-plus-square"></i>Создать новый список желаний</a>
         </form>
         <br>
         <br>
@@ -263,14 +263,14 @@
   {
     $editWishListSession=$data['editWishList'];
     $_SESSION['editWishListId']=$editWishListSession;
-    echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/editWishList "> ';
+    echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/editWishList.php "> ';
   }
 
   if (isset( $_POST['editMyWish']))
   {
     $editMyWishSession=$data['editMyWish'];
     $_SESSION['editMyWish']=$editMyWishSession;
-    echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/editMyWishInfo "> ';
+    echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/editMyWishInfo.php "> ';
 
 
   }
@@ -312,7 +312,7 @@
 <br>
 <div class="alert alert-danger" role="alert">
   <h4 class="alert-heading">Данная страница недоступна!</h4>
-  <p>Воспользуйтесь <a href="login ">входом в систему</a> или <a href="signup ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+  <p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
   <hr>
 </div>
 
