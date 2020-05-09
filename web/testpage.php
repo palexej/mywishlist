@@ -5,12 +5,13 @@
   <title></title>
 </head>
 <body>
-  новый текст уже тут
+  новый текст уже тут11111
 </body>
 </html>
-<?php require_once('dependence.php')
+<?php
+require_once('dependence.php')
 // $user = R::dispense('users');//автоматическое создание таблицы пользователей
-echo "<br ok>";
+// echo "<br ok>";
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
 // //
