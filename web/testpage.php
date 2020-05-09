@@ -22,7 +22,7 @@ require_once('dependence.php');
 R::freeze(false);
 if (isset($_POST['click'])) {
 
-  $user = R::dispense('users');//автоматическое создание таблицы пользователей
+  $user = R::dispense('heroku_8577067324d828a.users');//автоматическое создание таблицы пользователей
   $user->surname =666;
   $user->name = 666;
   $user->middlename = 666;
