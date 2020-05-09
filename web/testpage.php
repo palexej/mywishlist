@@ -6,26 +6,33 @@
 </head>
 <body>
   новый текст уже тут11111
+  <form  action="testpage" method="post">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+      </div>
+      <input type="text" name="password" class="form-control" placeholder="Введите password" value="<?php echo @$data['password']; ?>"><br/>
+    </div>
+    <button type="submit" name="click">click</button>
+  </form>
 </body>
 </html>
 <?php
 require_once('dependence.php');
 R::freeze(false);
-$user = R::dispense('users');//автоматическое создание таблицы пользователей
-if ($user) {
-echo "<br>312312";
+if (isset($_POST['click'])) {
+
+  $user = R::dispense('users');//автоматическое создание таблицы пользователей
+  $user->surname =666;
+  $user->name = 666;
+  $user->middlename = 666;
+  $user->login = 666;
+  $user->email = 666;
+  $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
+  R::store($user);
 }
-// echo "<br ok>";
-// //автоинкремент автоматически создается
-// $user->surname = "alexeyyyy";
-// //
-//
-//
-// $beans=array();
-// $beans[]=R::dispense('users');
-// $beans[0]->login='Hello World!';
-// $beans[1]->password='Hello World!1';
-// R::storeAll($user);
+
+
 
 
 ?>
