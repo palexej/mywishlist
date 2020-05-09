@@ -107,7 +107,7 @@
 				//сделать генерацию ссылку на картинку
 				// обеспечить генерацию ссылки
 				R::store($wishlist);
-				echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/upload"> ';
+				echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/upload.php"> ';
 
 			}else
 			{
@@ -126,7 +126,7 @@
 		<div class="row">
 			<div class="col-md-4 offset-md-4 text-center  text-center createWishList">
 				<h2>Создание списка желаний</h2>
-				<form action="http://awishlist/authAndLogin/createWishList" method="post">
+				<form action="https://awishlist.herokuapp.com/createWishList.php" method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
