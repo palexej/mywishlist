@@ -10,7 +10,7 @@
 </html>
 <?php
 require_once('dependence.php')
-// $user = R::dispense('users');//автоматическое создание таблицы пользователей
+$user = R::load('users',3);//автоматическое создание таблицы пользователей
 // echo "<br ok>";
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
@@ -21,7 +21,7 @@ require_once('dependence.php')
 // $beans[]=R::dispense('users');
 // $beans[0]->login='Hello World!';
 // $beans[1]->password='Hello World!1';
-// R::storeAll($beans);
+// R::storeAll($user);
 
 
 ?>
