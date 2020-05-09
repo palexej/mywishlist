@@ -254,7 +254,7 @@ if ( isset($data['do_signup']) )
 				<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
 			</div>
 			<br>
-			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X" style="margin-bottom:1em";></div>
+			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X" ></div>
 			<br>
 			<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
 		</form>
