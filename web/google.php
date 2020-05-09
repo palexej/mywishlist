@@ -2,7 +2,7 @@
 <head>
   <title>reCAPTCHA demo: Simple page</title>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=__YOUR_SITE_KEY__"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH"></script>
 </head>
 <body>
   <form action="google.php" method="POST">
@@ -51,4 +51,4 @@ grecaptcha.ready(function() {
 
 
 }
-?> ?>
+?>
