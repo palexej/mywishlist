@@ -116,7 +116,7 @@
 				//$wishlist->wishlistsImgPath = $data['wishlistsImgPath'];
 				R::store($wishlist);
 
-				echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/upload "> ';
+				echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/upload.php "> ';
 				unset($_SESSION['editWishListId']);
 			}else
 			{

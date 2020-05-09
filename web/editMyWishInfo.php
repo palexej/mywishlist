@@ -49,15 +49,15 @@
               <i class="fa fa-fw fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="upload ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php  ">
                 <i class="fa fa-fw fa-list-alt"></i>
                 Мои списки желаний
               </a>
-              <a class="dropdown-item" href="userProfile ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php  ">
                 <i class="fa fa-fw fa-address-card"></i>
                 Настройки профиля
               </a>
-              <a class="dropdown-item" href="logout ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php  ">
                 <i class="fa fa-fw fa-sign-out-alt"></i>
                 Выйти
               </a>
@@ -186,7 +186,7 @@
     <div class="row">
       <div class="col-md-4 offset-md-4 text-center  text-center WishList">
         <h2>Редактирование информации о желании</h2>
-        <form action="editMyWishInfo " method="post" enctype="multipart/form-data">
+        <form action="https://awishlist.herokuapp.com/editMyWishInfo.php " method="post" enctype="multipart/form-data">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text bg-white"><i class="fa fa-gift"></i></span>
@@ -256,7 +256,7 @@
 <?php else : ?>
   <ul class="navbar-nav ">
     <li class="nav-item">
-      <a class="nav-link" href="signup ">
+      <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
         <i class="fa fa-fw fa-user-plus"></i>
         Регистрация
       </a>
@@ -264,7 +264,7 @@
   </ul>
   <ul class="navbar-nav ">
     <li class="nav-item">
-      <a class="nav-link" href="login ">
+      <a class="nav-link" href="https://awishlist.herokuapp.com/login.php  ">
         <i class="fa fa-fw fa-sign-in-alt"></i>
         Авторизация
       </a>
@@ -275,7 +275,7 @@
 <br>
 <div class="alert alert-danger" role="alert">
   <h4 class="alert-heading">Данная страница недоступна!</h4>
-  <p>Воспользуйтесь <a href="login ">входом в систему</a> или <a href="signup ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+  <p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php  ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php  ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
   <hr>
 </div>
 
