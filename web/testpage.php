@@ -13,13 +13,13 @@
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
 // //
-
-
-$beans=array();
-$beans[]=R::dispense('users');
-$beans[0]->login='Hello World!';
-$beans[1]->password='Hello World!1';
-R::storeAll($beans);
+//
+//
+// $beans=array();
+// $beans[]=R::dispense('users');
+// $beans[0]->login='Hello World!';
+// $beans[1]->password='Hello World!1';
+// R::storeAll($beans);
 
 
 ?>
