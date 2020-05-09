@@ -1,0 +1,2 @@
+
+ErrorDocument 404 https://awishlist.herokuapp.com/404.php
