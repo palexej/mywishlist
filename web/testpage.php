@@ -6,7 +6,7 @@
 </head>
 <body>
   новый текст уже тут11111
-  <form  action="testpage" method="post">
+  <form  action="https://awishlist.herokuapp.com/testpage.php" method="post">
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
