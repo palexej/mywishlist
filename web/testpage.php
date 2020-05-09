@@ -9,9 +9,12 @@
 </body>
 </html>
 <?php
-require_once('dependence.php')
+require_once('dependence.php');
 R::freeze(false);
-$user = R::load('users',3);//автоматическое создание таблицы пользователей
+$user = R::dispense('users');//автоматическое создание таблицы пользователей
+if ($user) {
+echo "<br>312312";
+}
 // echo "<br ok>";
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
