@@ -9,7 +9,8 @@
 </body>
 </html>
 <?php require_once('dependence.php')
-// $user = R::dispense('users');//автоматическое создание таблицы пользователей
+$user = R::dispense('users');//автоматическое создание таблицы пользователей
+echo "<br ok>";
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
 // //
