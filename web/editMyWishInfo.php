@@ -168,7 +168,7 @@
 
         R::store($saveWishInfo);
 
-        echo '<meta http-equiv="refresh" content="1;url= http://awishlist/authAndLogin/upload "> ';
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/upload.php"> ';
 
       }else
       {
