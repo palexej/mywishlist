@@ -44,7 +44,7 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="cataloge ">Каталог</a>
+					<a class="nav-link" href="https://awishlist.herokuapp.com/cataloge.php ">Каталог</a>
 				</li>
 			</ul>
 			<?php if ( isset ($_SESSION['logged_user']) ) :
@@ -56,15 +56,15 @@
 							<i class="fa fa-fw fa-user"></i>
 						</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="upload ">
+							<a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php ">
 								<i class="fa fa-fw fa-list-alt"></i>
 								Мои списки желаний
 							</a>
-							<a class="dropdown-item" href="userProfile ">
+							<a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php ">
 								<i class="fa fa-fw fa-address-card"></i>
 								Настройки профиля
 							</a>
-							<a class="dropdown-item" href="logout ">
+							<a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php ">
 								<i class="fa fa-fw fa-sign-out-alt"></i>
 								Выйти
 							</a>
@@ -136,7 +136,7 @@
 		<div class="row">
 			<div class="col-md-4 offset-md-4 text-center  text-center createWishList">
 				<h2>Редактирование списка желаний</h2>
-				<form action="editWishList " method="post">
+				<form action="https://awishlist.herokuapp.com/editWishList.php " method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
@@ -176,7 +176,7 @@
 <?php else : ?>
 	<ul class="navbar-nav ">
 		<li class="nav-item">
-			<a class="nav-link" href="signup ">
+			<a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
 				<i class="fa fa-fw fa-user-plus"></i>
 				Регистрация
 			</a>
@@ -184,7 +184,7 @@
 	</ul>
 	<ul class="navbar-nav ">
 		<li class="nav-item">
-			<a class="nav-link" href="login ">
+			<a class="nav-link" href="https://awishlist.herokuapp.com/logjn.php ">
 				<i class="fa fa-fw fa-sign-in-alt"></i>
 				Авторизация
 			</a>
@@ -195,7 +195,7 @@
 <br>
 <div class="alert alert-danger" role="alert">
 	<h4 class="alert-heading">Данная страница недоступна!</h4>
-	<p>Воспользуйтесь <a href="login ">входом в систему</a> или <a href="signup ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+	<p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/siqnup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
 	<hr>
 </div>
 

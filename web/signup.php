@@ -35,7 +35,7 @@ body {
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="cataloge ">Каталог</a>
+					<a class="nav-link" href="https://awishlist.herokuapp.com/cataloge.php ">Каталог</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ">

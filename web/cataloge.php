@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="cataloge ">Каталог</a>
+          <a class="nav-link" href="https://awishlist.herokuapp.com/cataloge.php ">Каталог</a>
         </li>
       </ul>
       <?php if ( isset ($_SESSION['logged_user']) ) :
@@ -40,15 +40,15 @@
               <i class="fa fa-fw fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="upload ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php ">
                 <i class="fa fa-fw fa-list-alt"></i>
                 Мои списки желаний
               </a>
-              <a class="dropdown-item" href="userProfile ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php ">
                 <i class="fa fa-fw fa-address-card"></i>
                 Настройки профиля
               </a>
-              <a class="dropdown-item" href="logout ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php ">
                 <i class="fa fa-fw fa-sign-out-alt"></i>
                 Выйти
               </a>
@@ -60,7 +60,7 @@
   <?php else :?>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="signup ">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
           <i class="fa fa-fw fa-user-plus"></i>
           Регистрация
         </a>
@@ -68,7 +68,7 @@
     </ul>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="login ">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
           <i class="fa fa-fw fa-sign-in-alt"></i>
           Авторизация
         </a>
@@ -90,7 +90,7 @@
 
       <div class="input-bar">
         <div class="input-bar-item width100">
-          <form action="cataloge" method="post" enctype="multipart/form-data">
+          <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
             <div class="input-group">
               <input class="form-control width100" value="" name="searchField"  type="text"  placeholder="Поиск по каталогу...">
               <span class="input-group-btn">
@@ -147,7 +147,7 @@
       <div class="alert alert-info" role="alert">
       <h4 class="alert-heading">К сожалению, по Вашему запросу мы ничего не нашли :(</h4>
       <p>
-      <a href=" http://awishlist/authAndLogin/cataloge">Сбросить параметры поиска по каталогу</a>
+      <a href="https://awishlist.herokuapp.com/cataloge.php>Сбросить параметры поиска по каталогу</a>
       </p>
       <hr>
       </div>
@@ -200,7 +200,7 @@
           {
             echo '
             <div class="card-footer bg-transparent">
-            <form action="cataloge" method="post" enctype="multipart/form-data">
+            <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
 
 
             <select class="form-control" id="exampleFormControlSelect1" name="selectWishlistToAdd" data-toggle="tooltip" data-placement="right" title="Выберите список, в который нужно добавить желание из каталога">
@@ -288,7 +288,7 @@
       R::store($addProdToWishlist);
       unset($data['addWishFromCataloge']);
       //
-      echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/cataloge "> ';
+      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/cataloge.php "> ';
     }
 
 
