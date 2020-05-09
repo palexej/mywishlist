@@ -22,10 +22,15 @@ require_once('dependence.php');
 R::freeze(true);
 if (isset($_POST['click'])) {
 
-  $user = R::load('users',5);
+  $user = R::dispense('users');
+  $user->surname =6661;
+  $user->name = 61616;
+  $user->middlename = 6616;
+  $user->login = 6616;
+  $user->email = 6166;
+  $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
 
-  $nameUser=$user->name;
-  echo $nameUser;
+    R::store($user);
   //автоматическое создание таблицы пользователей
 
 }
