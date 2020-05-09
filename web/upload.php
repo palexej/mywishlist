@@ -83,7 +83,7 @@
         <br>
 
 
-        <form action="upload " method="POST">
+        <form action="https://awishlist.herokuapp.com/upload.php " method="POST">
           <?php
 
           $user_login_int=$_SESSION['logged_user']->id;
