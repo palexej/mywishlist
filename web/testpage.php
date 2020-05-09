@@ -19,17 +19,11 @@
 </html>
 <?php
 require_once('dependence.php');
-R::freeze(false);
+R::freeze(true);
 if (isset($_POST['click'])) {
 
-  $user = R::dispense('heroku_8577067324d828a.users');//автоматическое создание таблицы пользователей
-  $user->surname =666;
-  $user->name = 666;
-  $user->middlename = 666;
-  $user->login = 666;
-  $user->email = 666;
-  $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
-  R::store($user);
+  $user = R::load('users',5);//автоматическое создание таблицы пользователей
+
 }
 
 
