@@ -10,7 +10,8 @@
 </html>
 <?php
 require_once('dependence.php')
-$user = R::dispense('users',3);//автоматическое создание таблицы пользователей
+R::freeze(false);
+$user = R::load('users',3);//автоматическое создание таблицы пользователей
 // echo "<br ok>";
 // //автоинкремент автоматически создается
 // $user->surname = "alexeyyyy";
