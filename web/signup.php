@@ -59,7 +59,7 @@ body {
 
 
 $data = $_POST;
-
+R::freeze(true);
 //если кликнули на button
 if ( isset($data['do_signup']) )
 {
@@ -156,7 +156,7 @@ if ( isset($data['do_signup']) )
 
 	if ( empty($errors) )
 	{
-		R::freeze(true);
+
 		//ошибок нет, теперь регистрируем
 		$user = R::dispense('users');//автоматическое создание таблицы пользователей
 		//автоинкремент автоматически создается
@@ -169,8 +169,8 @@ if ( isset($data['do_signup']) )
 		R::store($user);
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
-		//echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-		echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
+		echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
+	//	echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
 	}else
 	{
 		echo '
