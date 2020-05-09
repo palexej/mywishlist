@@ -4,9 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<?php require_once 'dependence.php' ?>
+	<?php require_once 'dependence.php';
+	require_once "recaptchalib.php"; ?>
+
 
 	<title>Регистрация</title>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <style>
 body {
@@ -154,6 +157,29 @@ if ( isset($data['do_signup']) )
 		$errors[] = 'Пользователь с таким email уже существует!';
 	}
 
+	$secret = "6LeKaREUAAAAAGgPekvD1djRejSXufWqghauFg7-";
+	//ответ
+	$response = null;
+	//проверка секретного ключа
+	$reCaptcha = new ReCaptcha($secret);
+
+	if (!empty($_POST)) {
+
+		if ($_POST["g-recaptcha-response"]) {
+			$response = $reCaptcha->verifyResponse(
+				$_SERVER["REMOTE_ADDR"],
+				$_POST["g-recaptcha-response"]
+			);
+		}
+
+		if ($response != null && $response->success) {
+			echo "Все хорошо.";
+		} else {
+			$errors[] = 'Неверно введена капча';
+		}
+
+	}
+
 	if ( empty($errors) )
 	{
 
@@ -170,7 +196,7 @@ if ( isset($data['do_signup']) )
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
 		echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-	//	echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
+		//	echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
 	}else
 	{
 		echo '
@@ -238,6 +264,7 @@ if ( isset($data['do_signup']) )
 				</div>
 				<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
 			</div>
+			<div class="g-recaptcha" data-sitekey="6LdH0_QUAAAAAEd5ihDpdwdJTcKh-LRGP2t07u6X"></div>
 			<br>
 			<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
 		</form>
