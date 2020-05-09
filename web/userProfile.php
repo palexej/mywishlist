@@ -45,15 +45,15 @@
               <i class="fa fa-fw fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="upload ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php ">
                 <i class="fa fa-fw fa-list-alt"></i>
                 Мои списки желаний
               </a>
-              <a class="dropdown-item" href="userProfile ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php ">
                 <i class="fa fa-fw fa-address-card"></i>
                 Настройки профиля
               </a>
-              <a class="dropdown-item" href="logout ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php ">
                 <i class="fa fa-fw fa-sign-out-alt"></i>
                 Выйти
               </a>
@@ -108,7 +108,7 @@
         $changeUserPassword->password = password_hash($data['newPassword'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
         R::store($changeUserPassword);
         unset($data['change_password']);
-        echo '<meta http-equiv="refresh" content="1;url= http://awishlist/authAndLogin/userProfile "> ';
+        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/userProfile.php "> ';
         echo '
         <div class="alert alert-success col-md-6 offset-md-3 alert-dismissible fade show" role="alert" text-center id="errors ">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -160,7 +160,7 @@
         R::store($saveUserInfo);
         //хэширование back crypt, надежднее md5
         unset($data['do_signup']);
-        echo '<meta http-equiv="refresh" content="1;url= http://awishlist/authAndLogin/userProfile "> ';
+        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/userProfile.php "> ';
         echo '
         <div class="alert alert-success col-md-6 offset-md-3 alert-dismissible fade show" role="alert" text-center id="errors ">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -191,7 +191,7 @@
       <div class="col-md-4 offset-md-4 text-center userProfile">
         <h2>Настройка информации профиля</h2>
 
-        <form action="userProfile " method="POST">
+        <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
@@ -218,7 +218,7 @@
 
         <br>
         <h2>Изменение пароля</h2>
-        <form action="userProfile " method="POST">
+        <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text bg-white"><i class="fa fa-unlock"></i></span>
@@ -252,7 +252,7 @@
 <?php else : ?>
   <ul class="navbar-nav ">
     <li class="nav-item">
-      <a class="nav-link" href="signup ">
+      <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
         <i class="fa fa-fw fa-user-plus"></i>
         Регистрация
       </a>
@@ -260,7 +260,7 @@
   </ul>
   <ul class="navbar-nav ">
     <li class="nav-item">
-      <a class="nav-link" href="login ">
+      <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
         <i class="fa fa-fw fa-sign-in-alt"></i>
         Авторизация
       </a>
@@ -270,8 +270,8 @@
 </nav>
 <br>
 <div class="alert alert-danger" role="alert">
-  <h4 class="alert-heading">Данная страница недоступна!</h4>
-  <p>Воспользуйтесь <a href="login ">входом в систему</a> или <a href="signup ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+  <h4 class="alert-heading">Данная страница недоступна</h4>
+  <p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
   <hr>
 </div>
 

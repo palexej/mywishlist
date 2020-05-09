@@ -40,7 +40,7 @@ body {
 			</ul>
 			<ul class="navbar-nav ">
 				<li class="nav-item">
-					<a class="nav-link" href="signup ">
+					<a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
 						<i class="fa fa-fw fa-user-plus"></i>
 						Регистрация
 					</a>
@@ -48,7 +48,7 @@ body {
 			</ul>
 			<ul class="navbar-nav ">
 				<li class="nav-item">
-					<a class="nav-link" href="login ">
+					<a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
 						<i class="fa fa-fw fa-sign-in-alt"></i>
 						Авторизация
 					</a>
@@ -188,8 +188,8 @@ if ( isset($data['do_signup']) )
 		R::store($user);
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
-		echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-		//	echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
+		// echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
+			echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
 	}else
 	{
 		echo '
