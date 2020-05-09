@@ -22,7 +22,11 @@ require_once('dependence.php');
 R::freeze(true);
 if (isset($_POST['click'])) {
 
-  $user = R::load('users',5);//автоматическое создание таблицы пользователей
+  $user = R::load('users',5);
+
+  $nameUser=$user->name;
+  echo $nameUser;
+  //автоматическое создание таблицы пользователей
 
 }
 
