@@ -113,6 +113,7 @@
                 <h5>'.$oneWishList->wishlist_name.'</h5>
                 <div class="text-right">
                 <div class="btn-group text-right role="group" aria-label="Basic example">
+                <button class="btn btn-outline-primary text-right copyValue"  data-toggle="tooltip" title="Нажмите, чтобы скопировать ссылку на список желаний в буфер обмена" type="button" id="getLink" name="getLink" value="https://awishlist.herokuapp.com/upload.php/showUserWishlist.php?ID='.$id.'"  ><i class="fa fa-fw fa-link"></i></button>
                 <button class="btn btn-outline-success text-right"  data-toggle="tooltip" title="Добавить желание в список" type="submit" name="addWishToList" value='.$id.'  ><i class="fa fa-fw fa-plus"></i></button>
                 <button class="btn btn-outline-primary text-right"  data-toggle="tooltip" title="Редактировать список желаний" type="submit" name="editWishList" value='.$id.'  ><i class="fa fa-fw fa-edit"></i></button>
                 <button class="btn btn-outline-danger" type="submit" data-toggle="tooltip" title="Удалить список желаний" name="deleteWishList" value='.$id.' ><i class="fa fa-fw fa-trash-alt"></i></button>
@@ -219,98 +220,85 @@
               }
             }
             ?>
-
-            <!--
-
-
-
-            <li class="list-group-item"><b>Название желания:</b> '.$oneWishName.'</li>
-            <li class="list-group-item"><b>Информация</b> '.$oneWishInfo.'</li>
-            <li class="list-group-item"><b>Цена</b> '.$oneWishPrice.'</li>
-            <li class="list-group-item"><b>Ссылка</b> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
-            <li class="list-group-item">
-            <button class="btn btn-outline-primary btn-block" data-toggle="tooltip" data-placement="right" title="Редактировать желание: '.$oneWishName.'" type="submit" name="editMyWish" value='.$oneWishId.'  ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-edit"></i></button>
-            <button class="btn btn-outline-danger btn-block" type="submit" data-toggle="tooltip" data-placement="right" title="Удалить желание: '.$oneWishName.'" name="deleteMyWish" value='.$oneWishId.' ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-trash-alt"></i></button>
-          </li> -->
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-  </body>
-  </html>
+    </body>
+    </html>
 
 
-  <?php
-  $data = $_POST;
-  if (isset( $data['deleteWishList'])) {
-    $id = $data['deleteWishList'];
-    $newwishlists = R::load('newwishlists', $id);//удаление элемента листа желаний по id
-    R::trash($newwishlists);
+    <?php
+    $data = $_POST;
+    if (isset( $data['deleteWishList'])) {
+      $id = $data['deleteWishList'];
+      $newwishlists = R::load('newwishlists', $id);//удаление элемента листа желаний по id
+      R::trash($newwishlists);
 
-    echo '<meta http-equiv="refresh" content="0">';
-    unset($data['deleteWishList']);
-    //обновление страницы
-  }
+      echo '<meta http-equiv="refresh" content="0">';
+      unset($data['deleteWishList']);
+      //обновление страницы
+    }
 
-  if (isset($data['createWishList'])) {
-    $_SESSION['logged_user'];
-  }
+    if (isset($data['createWishList'])) {
+      $_SESSION['logged_user'];
+    }
 
-  if (isset($data['addWishToList'])) {
-    $_SESSION['addWishToList']=$data['addWishToList'];
-    echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/addWishToList.php "> ';
+    if (isset($data['addWishToList'])) {
+      $_SESSION['addWishToList']=$data['addWishToList'];
+      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/addWishToList.php "> ';
 
-  }
+    }
 
-  if (isset( $_POST['editWishList']))
-  {
-    $editWishListSession=$data['editWishList'];
-    $_SESSION['editWishListId']=$editWishListSession;
-    echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/editWishList.php "> ';
-  }
+    if (isset( $_POST['editWishList']))
+    {
+      $editWishListSession=$data['editWishList'];
+      $_SESSION['editWishListId']=$editWishListSession;
+      echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/editWishList.php "> ';
+    }
 
-  if (isset( $_POST['editMyWish']))
-  {
-    $editMyWishSession=$data['editMyWish'];
-    $_SESSION['editMyWish']=$editMyWishSession;
-    echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/editMyWishInfo.php "> ';
-
-
-  }
-
-  if (isset( $_POST['deleteMyWish']))
-  {
-    $id = $data['deleteMyWish'];
-    $deleteTheWish = R::load('wishs', $id);//удаление элемента листа желаний по id
-    $deleteImg=$deleteTheWish->wish_img_path;
-    unlink($deleteImg);//удаление картинки из папки
-    R::trash($deleteTheWish);
-    echo '<meta http-equiv="refresh" content="0">';
-    unset($data['deleteMyWish']);
-
-  }
-
-  ?>
+    if (isset( $_POST['editMyWish']))
+    {
+      $editMyWishSession=$data['editMyWish'];
+      $_SESSION['editMyWish']=$editMyWishSession;
+      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/editMyWishInfo.php "> ';
 
 
+    }
 
-<?php else : ?>
-  <ul class="navbar-nav ">
-    <li class="nav-item">
-      <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
-        <i class="fa fa-fw fa-user-plus"></i>
-        Регистрация
-      </a>
-    </li>
-  </ul>
-  <ul class="navbar-nav ">
-    <li class="nav-item">
-      <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
-        <i class="fa fa-fw fa-sign-in-alt"></i>
-        Авторизация
-      </a>
-    </li>
-  </ul>
-</div>
+    if (isset( $_POST['deleteMyWish']))
+    {
+      $id = $data['deleteMyWish'];
+      $deleteTheWish = R::load('wishs', $id);//удаление элемента листа желаний по id
+      $deleteImg=$deleteTheWish->wish_img_path;
+      unlink($deleteImg);//удаление картинки из папки
+      R::trash($deleteTheWish);
+      echo '<meta http-equiv="refresh" content="0">';
+      unset($data['deleteMyWish']);
+
+    }
+
+    ?>
+
+
+
+  <?php else : ?>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
+          <i class="fa fa-fw fa-user-plus"></i>
+          Регистрация
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
+          <i class="fa fa-fw fa-sign-in-alt"></i>
+          Авторизация
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <br>
 <div class="alert alert-danger" role="alert">
@@ -324,5 +312,20 @@
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
+});
+
+
+$(".copyValue").click(function() {
+  var getBntVal=$(this).val();
+
+  var copytext2 = document.createElement('input');
+  copytext2.value = getBntVal;
+  document.body.appendChild(copytext2);
+  copytext2.select();
+  document.execCommand("copy");
+  document.body.removeChild(copytext2);
+  $(this).tooltip().text("Скопировано");
+  setTimeout(function() {window.location.reload();}, 1000);
+
 });
 </script>
