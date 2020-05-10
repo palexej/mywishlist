@@ -108,7 +108,7 @@
         $changeUserPassword->password = password_hash($data['newPassword'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
         R::store($changeUserPassword);
         unset($data['change_password']);
-        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/userProfile.php "> ';
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/userProfile.php "> ';
         echo '
         <div class="alert alert-success col-md-6 offset-md-3 alert-dismissible fade show" role="alert" text-center id="errors ">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -160,7 +160,7 @@
         R::store($saveUserInfo);
         //хэширование back crypt, надежднее md5
         unset($data['do_signup']);
-        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/userProfile.php "> ';
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/userProfile.php "> ';
         echo '
         <div class="alert alert-success col-md-6 offset-md-3 alert-dismissible fade show" role="alert" text-center id="errors ">
         <button type="button" class="close" data-dismiss="alert">&times;</button>

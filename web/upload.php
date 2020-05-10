@@ -246,7 +246,7 @@
     $newwishlists = R::load('newwishlists', $id);//удаление элемента листа желаний по id
     R::trash($newwishlists);
 
-    echo '<meta http-equiv="refresh" content="1">';
+    echo '<meta http-equiv="refresh" content="0">';
     unset($data['deleteWishList']);
     //обновление страницы
   }

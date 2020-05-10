@@ -147,7 +147,7 @@
 
         R::store($addWish);
 
-        echo '<meta http-equiv="refresh" content="1;url= https://awishlist.herokuapp.com/upload.php "> ';
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/upload.php "> ';
 
       }else
       {
