@@ -161,74 +161,74 @@
       }
     }
     ?>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 offset-md-4 text-center  text-center WishList">
+          <h2>Добавить новое желание</h2>
+          <form action="https://awishlist.herokuapp.com/addWishToList.php" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-gift"></i></span>
+              </div>
+              <input type="text" name="wish_name" class="form-control" placeholder="Введите название желания" value="<?php echo @$data['wish_name']; ?>">
+            </div>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+              </div>
+              <textarea type="text" style="resize:vertical" name="wish_info" class="form-control" placeholder="Введите информацию о  желании" value=""><?php echo @$data['wish_info']; ?></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-list-ol"></i></span>
+                <select class="form-control" id="exampleFormControlSelect1" name="selectWishlistToAdd" data-toggle="tooltip" data-placement="right" title="Выберите список, в который нужно добавить желение">
+                  <?php
+                  $user_login_int=$_SESSION['logged_user']->id;
+                  $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
+                  $wishlistsCount = R::count('newwishlists',"user_login_id=?",array($user_login_int));
+                  $i=0;
+                  foreach ($wishlists as $oneWishList){
+                    $wishlistId=$oneWishList->id;
+                    $wishlistName=$oneWishList->wishlist_name;
+                    echo '  <option  value='.$wishlistId.'>'.$wishlistName.'</option>';
+                  }
+                  ?>
+                </select>
+              </div>
+            </div>
 
-    <div class="row">
-      <div class="col-md-4 offset-md-4 text-center  text-center WishList">
-        <h2>Добавить новое желание</h2>
-        <form action="https://awishlist.herokuapp.com/addWishToList.php" method="post" enctype="multipart/form-data">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-gift"></i></span>
-            </div>
-            <input type="text" name="wish_name" class="form-control" placeholder="Введите название желания" value="<?php echo @$data['wish_name']; ?>">
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
-            </div>
-            <textarea type="text" style="resize:vertical" name="wish_info" class="form-control" placeholder="Введите информацию о  желании" value=""><?php echo @$data['wish_info']; ?></textarea>
-          </div>
-          <br>
-          <div class="form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-list-ol"></i></span>
-              <select class="form-control" id="exampleFormControlSelect1" name="selectWishlistToAdd" data-toggle="tooltip" data-placement="right" title="Выберите список, в который нужно добавить желение">
-                <?php
-                $user_login_int=$_SESSION['logged_user']->id;
-                $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
-                $wishlistsCount = R::count('newwishlists',"user_login_id=?",array($user_login_int));
-                $i=0;
-                foreach ($wishlists as $oneWishList){
-                  $wishlistId=$oneWishList->id;
-                  $wishlistName=$oneWishList->wishlist_name;
-                  echo '  <option  value='.$wishlistId.'>'.$wishlistName.'</option>';
-                }
-                ?>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-money-bill-wave-alt"></i></span>
+              </div>
+              <input type="text" name="wish_price" class="form-control" placeholder="Введите цену желания" value="<?php echo @$data['wish_price']; ?>">
+              <select class="form-control" name="currencyType"  data-toggle="tooltip" data-placement="right" title="Выберите тип валюты">
+                <option selected value="₽">₽</option>
+                <option value="€">€</option>
+                <option value="$">$</option>
               </select>
             </div>
-          </div>
-
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-money-bill-wave-alt"></i></span>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-link"></i></span>
+              </div>
+              <input type="text" name="wish_link" class="form-control" placeholder="Введите ссылку на страницу желания" value="<?php echo @$data['wish_link']; ?>"><br/>
             </div>
-            <input type="text" name="wish_price" class="form-control" placeholder="Введите цену желания" value="<?php echo @$data['wish_price']; ?>">
-            <select class="form-control" name="currencyType"  data-toggle="tooltip" data-placement="right" title="Выберите тип валюты">
-              <option selected value="₽">₽</option>
-              <option value="€">€</option>
-              <option value="$">$</option>
-            </select>
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-link"></i></span>
+            <br>
+            <div class="custom-file">
+              <input type="file"  name=file class="custom-file-input" data-toggle="tooltip" data-placement="right" title="Формат файла: jpeg или jpg">
+              <label class="custom-file-label">Выберите фотографию желания</label>
             </div>
-            <input type="text" name="wish_link" class="form-control" placeholder="Введите ссылку на страницу желания" value="<?php echo @$data['wish_link']; ?>"><br/>
-          </div>
-          <br>
-          <div class="custom-file">
-            <input type="file"  name=file class="custom-file-input" data-toggle="tooltip" data-placement="right" title="Формат файла: jpeg или jpg">
-            <label class="custom-file-label">Выберите фотографию желания</label>
-          </div>
-          <br>
-          <br>
-          <button class="btn btn-warning btn-block" type="submit" name="addWishToList">Добавить желание в список</button>
-        </form>
+            <br>
+            <br>
+            <button class="btn btn-warning btn-block" type="submit" name="addWishToList">Добавить желание в список</button>
+          </form>
+        </div>
       </div>
     </div>
-
   <?php else : ?>
     <ul class="navbar-nav ">
       <li class="nav-item">

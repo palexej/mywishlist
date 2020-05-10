@@ -77,12 +77,14 @@
 </nav>
 <?php endif; ?>
 <br>
-<div class="row">
-  <div class="col-md-6 offset-md-3 registrationForm">
-    <h2 style="text-align:center">Упс! Кажется, что-то пошло не так...</h2>
-    К сожалению, мы не можем найти страницу, которую вы ищете :(
-    <br>
-    <a href="http://awishlist/authAndLogin/cataloge">Вернуться на страницу каталога</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 registrationForm">
+      <h2 style="text-align:center">Упс! Кажется, что-то пошло не так...</h2>
+      К сожалению, мы не можем найти страницу, которую вы ищете :(
+      <br>
+      <a href="http://awishlist/authAndLogin/cataloge">Вернуться на страницу каталога</a>
+    </div>
   </div>
 </div>
 </body>

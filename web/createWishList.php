@@ -122,41 +122,42 @@
 			}
 		}
 		?>
-
-		<div class="row">
-			<div class="col-md-4 offset-md-4 text-center  text-center createWishList">
-				<h2>Создание списка желаний</h2>
-				<form action="https://awishlist.herokuapp.com/createWishList.php" method="post">
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 offset-md-4 text-center  text-center createWishList">
+					<h2>Создание списка желаний</h2>
+					<form action="https://awishlist.herokuapp.com/createWishList.php" method="post">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+							</div>
+							<input type="text" name="wishlist_name" class="form-control" placeholder="Введите название списка желаний" value=""><br/>
 						</div>
-						<input type="text" name="wishlist_name" class="form-control" placeholder="Введите название списка желаний" value=""><br/>
-					</div>
-					<br>
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+						<br>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+							</div>
+							<textarea type="text" style="resize:vertical" name="wishlist_info" class="form-control" placeholder="Введите информацию о списке желаний" value=""></textarea>
 						</div>
-						<textarea type="text" style="resize:vertical" name="wishlist_info" class="form-control" placeholder="Введите информацию о списке желаний" value=""></textarea>
-					</div>
-					<br>
-					<div class="input-group" >
-						<div class="input-group-prepend">
-							<span class="input-group-text bg-white"><i class="fa fa-calendar-alt"></i></span>
+						<br>
+						<div class="input-group" >
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white"><i class="fa fa-calendar-alt"></i></span>
+							</div>
+							<input type="text" readonly name="wishlist_data" id="datepicker" autocomplete="off" class="form-control" placeholder="Выберите дату проведения мероприятия">
 						</div>
-						<input type="text" readonly name="wishlist_data" id="datepicker" autocomplete="off" class="form-control" placeholder="Выберите дату проведения мероприятия">
-					</div>
-					<br>
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text bg-white"><i class="fa fa-map-marker"></i></span>
+						<br>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white"><i class="fa fa-map-marker"></i></span>
+							</div>
+							<input type="text" name="address" class="form-control" placeholder="Введите адрес проведения мероприятия" value=""><br/>
 						</div>
-						<input type="text" name="address" class="form-control" placeholder="Введите адрес проведения мероприятия" value=""><br/>
-					</div>
-					<br>
-					<button class="btn btn-success  btn-block" type="submit" name="createWishList">Создать список желаний</button>
-				</form>
+						<br>
+						<button class="btn btn-success  btn-block" type="submit" name="createWishList">Создать список желаний</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	<?php else :?>

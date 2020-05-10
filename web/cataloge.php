@@ -83,11 +83,8 @@
 
 
 <div class="container-fluid">
-
-
   <div class="row">
     <div class="col-md-8 offset-md-2">
-
       <div class="input-bar">
         <div class="input-bar-item width100">
           <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
@@ -203,102 +200,102 @@
             <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
 
 
-            <select class="form-control" id="exampleFormControlSelect1" name="selectWishlistToAdd" data-toggle="tooltip" data-placement="right" title="Выберите список, в который нужно добавить желание из каталога">
-            ';
+              <select class="form-control" id="exampleFormControlSelect1" name="selectWishlistToAdd" data-toggle="tooltip" data-placement="right" title="Выберите список, в который нужно добавить желание из каталога">
+              ';
 
 
-            $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
+              $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
 
-            foreach ($wishlists as $oneWishList){
-              $wishlistId=$oneWishList->id;
-              $wishlistName=$oneWishList->wishlist_name;
-              echo '  <option  value='.$wishlistId.'>'.$wishlistName.'</option>';
+              foreach ($wishlists as $oneWishList){
+                $wishlistId=$oneWishList->id;
+                $wishlistName=$oneWishList->wishlist_name;
+                echo '  <option  value='.$wishlistId.'>'.$wishlistName.'</option>';
+              }
+
+              echo '
+              </select>
+              <br>
+              <button type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" title="Добавить желание в список">
+              <i class="fa fa-plus-circle"></i>
+              </button>
+              </form>
+              </div>
+              ';
             }
 
-            echo '
-            </select>
-            <br>
-            <button type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" title="Добавить желание в список">
-            <i class="fa fa-plus-circle"></i>
-            </button>
-            </form>
-            </div>
-            ';
           }
 
+
+
+
+          echo ' </div>';
+          // if ($i%4==0)
+          // {
+          //   echo '<br>';
+          // }
+
+
         }
-
-
-
-
-        echo ' </div>';
-        // if ($i%4==0)
-        // {
-        //   echo '<br>';
-        // }
 
 
       }
 
 
-    }
+      if (isset($data['addWishFromCataloge']))
+      {
+        $addProductId=$data['addWishFromCataloge'];
 
 
-    if (isset($data['addWishFromCataloge']))
-    {
-      $addProductId=$data['addWishFromCataloge'];
+        $loadProductWish = R::load('cataloge', $addProductId);
+
+        $loadProductName=$loadProductWish->product_name;
+        $loadProductInfo=$loadProductWish->product_info;
+        $loadProductPrice=$loadProductWish->product_price;
+        $loadProductCurrencyType=$loadProductWish->product_currency_type;
+        $loadProductType=$loadProductWish->product_type;
+        $loadProductImgPath=$loadProductWish->product_img_path;
+        $loadProductLink=$loadProductWish->product_link;
+
+        $_FILES['file']['name']=$loadProductImgPath;
+
+        $myCopiedFile= basename($_FILES['file']['name']);
+        $newNameOfFile = mt_rand(0, 10000) . $myCopiedFile;
 
 
-      $loadProductWish = R::load('cataloge', $addProductId);
+        // TODO: посмотреть значение функции  tempnam();
 
-      $loadProductName=$loadProductWish->product_name;
-      $loadProductInfo=$loadProductWish->product_info;
-      $loadProductPrice=$loadProductWish->product_price;
-      $loadProductCurrencyType=$loadProductWish->product_currency_type;
-      $loadProductType=$loadProductWish->product_type;
-      $loadProductImgPath=$loadProductWish->product_img_path;
-      $loadProductLink=$loadProductWish->product_link;
+        $myFile='wishsImg/' .$newNameOfFile;
 
-      $_FILES['file']['name']=$loadProductImgPath;
+        copy($_FILES['file']['name'], $myFile);
 
-      $myCopiedFile= basename($_FILES['file']['name']);
-      $newNameOfFile = mt_rand(0, 10000) . $myCopiedFile;
+        $addProdToWishlist = R::dispense('wishs');//автоматическое создание таблицы пользователей
 
 
-      // TODO: посмотреть значение функции  tempnam();
+        //автоинкремент автоматически создается
+        $addProdToWishlist->wish_name = $loadProductName;
+        $addProdToWishlist->wish_info = $loadProductInfo;
+        $addProdToWishlist->wish_price = $loadProductPrice;
 
-      $myFile='wishsImg/' .$newNameOfFile;
+        $addProdToWishlist->wish_wishlist_id=$data['selectWishlistToAdd'];
 
-      copy($_FILES['file']['name'], $myFile);
+        $addProdToWishlist->wish_link=$loadProductLink;
+        $addProdToWishlist->wish_img_path=$myFile;//загружать ещё и картинку
+        $addProdToWishlist->wish_currency_type=$loadProductCurrencyType;
 
-      $addProdToWishlist = R::dispense('wishs');//автоматическое создание таблицы пользователей
-
-
-      //автоинкремент автоматически создается
-      $addProdToWishlist->wish_name = $loadProductName;
-      $addProdToWishlist->wish_info = $loadProductInfo;
-      $addProdToWishlist->wish_price = $loadProductPrice;
-
-      $addProdToWishlist->wish_wishlist_id=$data['selectWishlistToAdd'];
-
-      $addProdToWishlist->wish_link=$loadProductLink;
-      $addProdToWishlist->wish_img_path=$myFile;//загружать ещё и картинку
-      $addProdToWishlist->wish_currency_type=$loadProductCurrencyType;
-
-      R::store($addProdToWishlist);
-      unset($data['addWishFromCataloge']);
-      //
-      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/cataloge.php "> ';
-    }
+        R::store($addProdToWishlist);
+        unset($data['addWishFromCataloge']);
+        //
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/cataloge.php "> ';
+      }
 
 
-    ?>
+      ?>
 
 
 
 
+    </div>
   </div>
-</div>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
