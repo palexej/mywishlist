@@ -144,10 +144,7 @@
       {
         $errors1[] = 'Введите имя';
       }
-      if ( trim($data['middlename']) == '' )//trim-обрезка ненужных пробелов
-      {
-        $errors1[] = 'Введите отчество';
-      }
+      
 
       if ( empty($errors1) )
       {
