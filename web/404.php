@@ -39,15 +39,15 @@
               <i class="fa fa-fw fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="upload">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php">
                 <i class="fa fa-fw fa-list-alt"></i>
                 Мои списки желаний
               </a>
-              <a class="dropdown-item" href="userProfile">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php">
                 <i class="fa fa-fw fa-address-card"></i>
                 Настройки профиля
               </a>
-              <a class="dropdown-item" href="logout">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php">
                 <i class="fa fa-fw fa-sign-out-alt"></i>
                 Выйти
               </a>
@@ -59,7 +59,7 @@
   <?php else : ?>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="signup">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php">
           <i class="fa fa-fw fa-user-plus"></i>
           Регистрация
         </a>
@@ -67,7 +67,7 @@
     </ul>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="login">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/login.php">
           <i class="fa fa-fw fa-sign-in-alt"></i>
           Авторизация
         </a>
