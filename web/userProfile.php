@@ -186,62 +186,64 @@
 
     ?>
     <br>
-    <div class="row" >
+    <div class="container-fluid">
+      <div class="row" >
 
-      <div class="col-md-4 offset-md-4 text-center userProfile">
-        <h2>Настройка информации профиля</h2>
+        <div class="col-md-4 offset-md-4 text-center userProfile">
+          <h2>Настройка информации профиля</h2>
 
-        <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+          <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+              </div>
+              <input type="text" name="surname" class="form-control" placeholder="Введите фамилию" value='<?php echo $editUserSurname ?>'>
             </div>
-            <input type="text" name="surname" class="form-control" placeholder="Введите фамилию" value='<?php echo $editUserSurname ?>'>
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+              </div>
+              <input type="text" name="name" class="form-control" placeholder="Введите имя" value='<?php echo $editUserName ?>'><br/>
             </div>
-            <input type="text" name="name" class="form-control" placeholder="Введите имя" value='<?php echo $editUserName ?>'><br/>
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+              </div>
+              <input type="text" name="middlename" class="form-control" placeholder="Введите отчество" value='<?php echo $editUserMiddlename?>'><br/>
             </div>
-            <input type="text" name="middlename" class="form-control" placeholder="Введите отчество" value='<?php echo $editUserMiddlename?>'><br/>
-          </div>
-          <br>
-          <button class="btn btn-success btn-block" type="submit" name="do_signup">Сохранить изменения</button>
-        </form>
+            <br>
+            <button class="btn btn-success btn-block" type="submit" name="do_signup">Сохранить изменения</button>
+          </form>
 
-        <br>
-        <h2>Изменение пароля</h2>
-        <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-unlock"></i></span>
-            </div>
-            <input type="password" name="currentPassword" class="form-control" placeholder="Введите текущий пароль" value=''>
-          </div>
           <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+          <h2>Изменение пароля</h2>
+          <form action="https://awishlist.herokuapp.com/userProfile.php " method="POST">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-unlock"></i></span>
+              </div>
+              <input type="password" name="currentPassword" class="form-control" placeholder="Введите текущий пароль" value=''>
             </div>
-            <input type="password" name="newPassword" class="form-control" placeholder="Введите новый пароль" value=''><br/>
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white"><i class="fa fa-redo"></i></span>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+              </div>
+              <input type="password" name="newPassword" class="form-control" placeholder="Введите новый пароль" value=''><br/>
             </div>
-            <input type="password" name="repeatNewPassword" class="form-control" placeholder="Введите новый пароль снова" value=''><br/>
-          </div>
-          <br>
-          <button class="btn btn-success btn-block" type="submit" name="change_password">Сменить пароль</button>
-        </form>
+            <br>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><i class="fa fa-redo"></i></span>
+              </div>
+              <input type="password" name="repeatNewPassword" class="form-control" placeholder="Введите новый пароль снова" value=''><br/>
+            </div>
+            <br>
+            <button class="btn btn-success btn-block" type="submit" name="change_password">Сменить пароль</button>
+          </form>
+        </div>
       </div>
     </div>
 

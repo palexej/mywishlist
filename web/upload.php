@@ -71,167 +71,169 @@
         </ul>
       </div>
     </nav>
-    <div class="row ">
-      <div class="col-md-6 offset-md-3 ">
-        <br>
-        <h2 style="text-align:center">Ваши списки желаний</h2>
-        <br>
-        <form  action="https://awishlist.herokuapp.com/upload.php " method="post">
-          <a href="https://awishlist.herokuapp.com/createWishList.php" name="createWishList" class="btn btn-success btn-block" role="button" aria-pressed="true"><i class="fa fa-fw fa-plus-square"></i>Создать новый список желаний</a>
-        </form>
-        <br>
-        <br>
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-md-6 offset-md-3 ">
+          <br>
+          <h2 style="text-align:center">Ваши списки желаний</h2>
+          <br>
+          <form  action="https://awishlist.herokuapp.com/upload.php " method="post">
+            <a href="https://awishlist.herokuapp.com/createWishList.php" name="createWishList" class="btn btn-success btn-block" role="button" aria-pressed="true"><i class="fa fa-fw fa-plus-square"></i>Создать новый список желаний</a>
+          </form>
+          <br>
+          <br>
 
 
-        <form action="https://awishlist.herokuapp.com/upload.php " method="POST">
-          <?php
+          <form action="https://awishlist.herokuapp.com/upload.php " method="POST">
+            <?php
 
-          $user_login_int=$_SESSION['logged_user']->id;
-          $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
-          $wishlistsCount=R::count('newwishlists',"user_login_id=?",array($user_login_int));
+            $user_login_int=$_SESSION['logged_user']->id;
+            $wishlists = R::find('newwishlists',"user_login_id=?",array($user_login_int));
+            $wishlistsCount=R::count('newwishlists',"user_login_id=?",array($user_login_int));
 
-          if ($wishlistsCount==0){
-            echo '
-            <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">У вас отсутствуют списки желаний</h4>
-            <p>Нажмите на кнопку "cоздать новый список желаний", чтобы создать его.</p>
-            <hr>
-            </div>
-            <br>';
-          }
-          else {
-            $i=0;
-            foreach ($wishlists as $oneWishList){
-              $id=$oneWishList->id;
-              $showInfo= $oneWishList->wishlist_info;
-              $showData=  $oneWishList->wishlist_data;
-              $showAddress = $oneWishList->address;
+            if ($wishlistsCount==0){
               echo '
-              <div class="card border-dark">
-              <div class="card-header" style="text-align:center">
-              <h5>'.$oneWishList->wishlist_name.'</h5>
-              <div class="text-right">
-              <div class="btn-group text-right role="group" aria-label="Basic example">
-              <button class="btn btn-outline-success text-right"  data-toggle="tooltip" title="Добавить желание в список" type="submit" name="addWishToList" value='.$id.'  ><i class="fa fa-fw fa-plus"></i></button>
-              <button class="btn btn-outline-primary text-right"  data-toggle="tooltip" title="Редактировать список желаний" type="submit" name="editWishList" value='.$id.'  ><i class="fa fa-fw fa-edit"></i></button>
-              <button class="btn btn-outline-danger" type="submit" data-toggle="tooltip" title="Удалить список желаний" name="deleteWishList" value='.$id.' ><i class="fa fa-fw fa-trash-alt"></i></button>
+              <div class="alert alert-info" role="alert">
+              <h4 class="alert-heading">У вас отсутствуют списки желаний</h4>
+              <p>Нажмите на кнопку "cоздать новый список желаний", чтобы создать его.</p>
+              <hr>
               </div>
-              </div>
-              </div>
-              <div class="card-body">
-              <div class="panel-group">
-              <div class="panel panel-default">
-              <div class="panel-heading">
-              <h6 class="panel-title">
-
-              <div class="row">
-              <div class="col-6 text-left">
-              <a data-toggle="collapse" href="#showInfo'.$i.'">Подробнее...</a>
-              </div>
-              <div class="col-6  text-right">
-              <a style="text-align:right" data-toggle="collapse" href="#showMyWishs'.$i.'">Посмотреть мои желания...</a>
-              </div>
-              </div>
-
-              </h6>
-              </div>
-              <div id="showInfo'.$i.'" class="panel-collapse collapse">
-              <ul class="list-group">
-              <li class="list-group-item"><b>Информация о мероприятии:</b> '.$showInfo.'</li>
-              <li class="list-group-item"><b>Дата проведения мероприятия:</b> '.$showData.'</li>
-              <li class="list-group-item"><b>Адрес проведения мероприятия:</b> '.$showAddress.'</li>
-
-              </ul>
-              </div>';
-              $wishs = R::find('wishs',"wish_wishlist_id=?",array($id));
-              $wishsCount = R::count('wishs',"wish_wishlist_id=?",array($id));
-
-              if ($wishsCount==0) {
+              <br>';
+            }
+            else {
+              $i=0;
+              foreach ($wishlists as $oneWishList){
+                $id=$oneWishList->id;
+                $showInfo= $oneWishList->wishlist_info;
+                $showData=  $oneWishList->wishlist_data;
+                $showAddress = $oneWishList->address;
                 echo '
-                <div id="showMyWishs'.$i.'" class="panel-collapse collapse">
-                <ul class="list-group">
-                <li class="list-group-item">Кажется, у Вас нет желаний в этом списке:(</li>
-                </ul>
+                <div class="card border-dark">
+                <div class="card-header" style="text-align:center">
+                <h5>'.$oneWishList->wishlist_name.'</h5>
+                <div class="text-right">
+                <div class="btn-group text-right role="group" aria-label="Basic example">
+                <button class="btn btn-outline-success text-right"  data-toggle="tooltip" title="Добавить желание в список" type="submit" name="addWishToList" value='.$id.'  ><i class="fa fa-fw fa-plus"></i></button>
+                <button class="btn btn-outline-primary text-right"  data-toggle="tooltip" title="Редактировать список желаний" type="submit" name="editWishList" value='.$id.'  ><i class="fa fa-fw fa-edit"></i></button>
+                <button class="btn btn-outline-danger" type="submit" data-toggle="tooltip" title="Удалить список желаний" name="deleteWishList" value='.$id.' ><i class="fa fa-fw fa-trash-alt"></i></button>
                 </div>
-                ';
-              }
-              else {
-                // echo '<div class="card-desk">';
-                foreach ($wishs as $oneWish){
-                  $oneWishId=$oneWish->id;
-                  $oneWishName=$oneWish->wish_name;
-                  $oneWishInfo=$oneWish ->wish_info;
-                  $oneWishPrice=$oneWish->wish_price;
-                  $oneWishLink=$oneWish->wish_link;
-                  $oneWishImg=$oneWish->wish_img_path;
-                  $oneWishCurrency =$oneWish->wish_currency_type;
+                </div>
+                </div>
+                <div class="card-body">
+                <div class="panel-group">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                <h6 class="panel-title">
 
+                <div class="row">
+                <div class="col-6 text-left">
+                <a data-toggle="collapse" href="#showInfo'.$i.'">Подробнее...</a>
+                </div>
+                <div class="col-6  text-right">
+                <a style="text-align:right" data-toggle="collapse" href="#showMyWishs'.$i.'">Посмотреть мои желания...</a>
+                </div>
+                </div>
+
+                </h6>
+                </div>
+                <div id="showInfo'.$i.'" class="panel-collapse collapse">
+                <ul class="list-group">
+                <li class="list-group-item"><b>Информация о мероприятии:</b> '.$showInfo.'</li>
+                <li class="list-group-item"><b>Дата проведения мероприятия:</b> '.$showData.'</li>
+                <li class="list-group-item"><b>Адрес проведения мероприятия:</b> '.$showAddress.'</li>
+
+                </ul>
+                </div>';
+                $wishs = R::find('wishs',"wish_wishlist_id=?",array($id));
+                $wishsCount = R::count('wishs',"wish_wishlist_id=?",array($id));
+
+                if ($wishsCount==0) {
                   echo '
-
-                  <div id="showMyWishs'.$i.'" class="panel-collapse collapse">';
-                  // <ul class="list-group">
-                  //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
-                  echo '
-                  <div class="card border-dark text-left" style="  display: inline-block">';
-                  if ($oneWishImg!='') {
-
-                    echo '
-                    <div class="text-center">
-                    <img class="card-img-top w-50 h-50 p-2 img-thumbnail" src="'.$oneWishImg.'">
-                    </div>
-                    ';
-                  }
-                  echo'
-
-                  <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>
-
-                  <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><b>Информация:</b> '.$oneWishInfo.'</li>
-                  <li class="list-group-item"><b>Цена:</b> '.$oneWishPrice.''.$oneWishCurrency.'</li>
-                  <li class="list-group-item"><b>Ссылка:</b><br> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
-                  </ul>
-
-
-                  <div class="card-footer bg-transparent ">
-                  <button class="btn btn-outline-primary btn-block" data-toggle="tooltip" data-placement="right" title="Редактировать желание: '.$oneWishName.'" type="submit" name="editMyWish" value='.$oneWishId.'  ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-edit"></i></button>
-                  <button class="btn btn-outline-danger btn-block" type="submit" data-toggle="tooltip" data-placement="right" title="Удалить желание: '.$oneWishName.'" name="deleteMyWish" value='.$oneWishId.' ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-trash-alt"></i></button>
-                  </div>
-                  </div>
-                  <br>
-
-                  <br>
+                  <div id="showMyWishs'.$i.'" class="panel-collapse collapse">
+                  <ul class="list-group">
+                  <li class="list-group-item">Кажется, у Вас нет желаний в этом списке:(</li>
                   </ul>
                   </div>
                   ';
-
                 }
+                else {
+                  // echo '<div class="card-desk">';
+                  foreach ($wishs as $oneWish){
+                    $oneWishId=$oneWish->id;
+                    $oneWishName=$oneWish->wish_name;
+                    $oneWishInfo=$oneWish ->wish_info;
+                    $oneWishPrice=$oneWish->wish_price;
+                    $oneWishLink=$oneWish->wish_link;
+                    $oneWishImg=$oneWish->wish_img_path;
+                    $oneWishCurrency =$oneWish->wish_currency_type;
+
+                    echo '
+
+                    <div id="showMyWishs'.$i.'" class="panel-collapse collapse">';
+                    // <ul class="list-group">
+                    //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
+                    echo '
+                    <div class="card border-dark text-left" style="  display: inline-block">';
+                    if ($oneWishImg!='') {
+
+                      echo '
+                      <div class="text-center">
+                      <img class="card-img-top w-50 h-50 p-2 img-thumbnail" src="'.$oneWishImg.'">
+                      </div>
+                      ';
+                    }
+                    echo'
+
+                    <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>
+
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Информация:</b> '.$oneWishInfo.'</li>
+                    <li class="list-group-item"><b>Цена:</b> '.$oneWishPrice.''.$oneWishCurrency.'</li>
+                    <li class="list-group-item"><b>Ссылка:</b><br> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
+                    </ul>
+
+
+                    <div class="card-footer bg-transparent ">
+                    <button class="btn btn-outline-primary btn-block" data-toggle="tooltip" data-placement="right" title="Редактировать желание: '.$oneWishName.'" type="submit" name="editMyWish" value='.$oneWishId.'  ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-edit"></i></button>
+                    <button class="btn btn-outline-danger btn-block" type="submit" data-toggle="tooltip" data-placement="right" title="Удалить желание: '.$oneWishName.'" name="deleteMyWish" value='.$oneWishId.' ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-trash-alt"></i></button>
+                    </div>
+                    </div>
+                    <br>
+
+                    <br>
+                    </ul>
+                    </div>
+                    ';
+
+                  }
+                }
+                echo '
+
+                </div>
+                </div>
+                </div>
+                </div>
+                <br>
+                ';
+                $i++;
               }
-              echo '
-
-              </div>
-              </div>
-              </div>
-              </div>
-              <br>
-              ';
-              $i++;
             }
-          }
-          ?>
+            ?>
 
-          <!--
-
+            <!--
 
 
-          <li class="list-group-item"><b>Название желания:</b> '.$oneWishName.'</li>
-          <li class="list-group-item"><b>Информация</b> '.$oneWishInfo.'</li>
-          <li class="list-group-item"><b>Цена</b> '.$oneWishPrice.'</li>
-          <li class="list-group-item"><b>Ссылка</b> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
-          <li class="list-group-item">
-          <button class="btn btn-outline-primary btn-block" data-toggle="tooltip" data-placement="right" title="Редактировать желание: '.$oneWishName.'" type="submit" name="editMyWish" value='.$oneWishId.'  ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-edit"></i></button>
-          <button class="btn btn-outline-danger btn-block" type="submit" data-toggle="tooltip" data-placement="right" title="Удалить желание: '.$oneWishName.'" name="deleteMyWish" value='.$oneWishId.' ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-trash-alt"></i></button>
-        </li> -->
-      </form>
+
+            <li class="list-group-item"><b>Название желания:</b> '.$oneWishName.'</li>
+            <li class="list-group-item"><b>Информация</b> '.$oneWishInfo.'</li>
+            <li class="list-group-item"><b>Цена</b> '.$oneWishPrice.'</li>
+            <li class="list-group-item"><b>Ссылка</b> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
+            <li class="list-group-item">
+            <button class="btn btn-outline-primary btn-block" data-toggle="tooltip" data-placement="right" title="Редактировать желание: '.$oneWishName.'" type="submit" name="editMyWish" value='.$oneWishId.'  ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-edit"></i></button>
+            <button class="btn btn-outline-danger btn-block" type="submit" data-toggle="tooltip" data-placement="right" title="Удалить желание: '.$oneWishName.'" name="deleteMyWish" value='.$oneWishId.' ><i class="fa fa-fw fa-list-ol"></i><i class="fa fa-fw fa-trash-alt"></i></button>
+          </li> -->
+        </form>
+      </div>
     </div>
   </body>
   </html>

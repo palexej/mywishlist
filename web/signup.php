@@ -189,7 +189,7 @@ if ( isset($data['do_signup']) )
 		//хэширование back crypt, надежднее md5
 		//	echo "string";
 		// echo '<div style="color:dreen;">Вы успешно зарегистрированы!</div><hr>';
-			echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
+		echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/login.php"> ';
 	}else
 	{
 		echo '
@@ -206,67 +206,65 @@ if ( isset($data['do_signup']) )
 ?>
 <br>
 
-<div class="row">
-	<div class="col-md-4 offset-md-4 text-center registrationForm">
-		<h2>Регистрация</h2>
-		<form action="https://awishlist.herokuapp.com/signup.php " method="POST">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 offset-md-4 text-center registrationForm">
+			<h2>Регистрация</h2>
+			<form action="https://awishlist.herokuapp.com/signup.php " method="POST">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+					</div>
+					<input type="text" name="surname" class="form-control" placeholder="Введите фамилию" value="<?php echo @$data['surname']; ?>">
 				</div>
-				<input type="text" name="surname" class="form-control" placeholder="Введите фамилию" value="<?php echo @$data['surname']; ?>">
-			</div>
-			<br>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+				<br>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+					</div>
+					<input type="text" name="name" class="form-control" placeholder="Введите имя" value="<?php echo @$data['name']; ?>"><br/>
 				</div>
-				<input type="text" name="name" class="form-control" placeholder="Введите имя" value="<?php echo @$data['name']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+				<br>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
+					</div>
+					<input type="text" name="middlename" class="form-control" placeholder="Введите отчество" value="<?php echo @$data['middlename']; ?>"><br/>
 				</div>
-				<input type="text" name="middlename" class="form-control" placeholder="Введите отчество" value="<?php echo @$data['middlename']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+				<br>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+					</div>
+					<input type="text" name="login" class="form-control" placeholder="Введите логин" value="<?php echo @$data['login']; ?>"><br/>
 				</div>
-				<input type="text" name="login" class="form-control" placeholder="Введите логин" value="<?php echo @$data['login']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group rounded">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-at"></i></span>
+				<br>
+				<div class="input-group rounded">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-at"></i></span>
+					</div>
+					<input type="email" name="email" class="form-control" placeholder="Введите адрес электронной почты"  value="<?php echo @$data['email']; ?>"><br/>
 				</div>
-				<input type="email" name="email" class="form-control" placeholder="Введите адрес электронной почты"  value="<?php echo @$data['email']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group rounded ">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+				<br>
+				<div class="input-group rounded ">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+					</div>
+					<input type="password" name="password" class="form-control" placeholder="Введите пароль" value="<?php echo @$data['password']; ?>"><br/>
 				</div>
-				<input type="password" name="password" class="form-control" placeholder="Введите пароль" value="<?php echo @$data['password']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-redo"></i></span>
+				<br>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-redo"></i></span>
+					</div>
+					<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
 				</div>
-				<input type="password"  name="passwordRepeat" class="form-control" placeholder="Повторите пароль снова"   value="<?php echo @$data['passwordRepeat']; ?>"><br/>
-			</div>
-			<br>
-			<div class="g-recaptcha" data-sitekey="6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH" style="display: inline-block;"></div>
-			<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
-		</form>
+				<br>
+				<div class="g-recaptcha" data-sitekey="6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH" style="display: inline-block;"></div>
+				<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
+			</form>
+		</div>
 	</div>
-
 </div>
-
-
-
 </body>
 </html>

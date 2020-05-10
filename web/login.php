@@ -94,28 +94,29 @@ if ( isset($data['do_login']) )
 ?>
 
 <br>
-<div class="row">
-	<div class="col-md-4 offset-md-4 text-center  text-center loginForm">
-		<h2>Вход</h2>
-		<form action="https://awishlist.herokuapp.com/login.php" method="POST">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 offset-md-4 text-center  text-center loginForm">
+			<h2>Вход</h2>
+			<form action="https://awishlist.herokuapp.com/login.php" method="POST">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-user"></i></span>
+					</div>
+					<input type="text" name="login" class="form-control" placeholder="Введите логин" value="<?php echo @$data['login']; ?>"><br/>
 				</div>
-				<input type="text" name="login" class="form-control" placeholder="Введите логин" value="<?php echo @$data['login']; ?>"><br/>
-			</div>
-			<br>
-			<div class="input-group rounded ">
-				<div class="input-group-prepend">
-					<span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+				<br>
+				<div class="input-group rounded ">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-white"><i class="fa fa-key"></i></span>
+					</div>
+					<input type="password" name="password" class="form-control" placeholder="Введите пароль" value="<?php echo @$data['password']; ?>"><br/>
 				</div>
-				<input type="password" name="password" class="form-control" placeholder="Введите пароль" value="<?php echo @$data['password']; ?>"><br/>
-			</div>
-			<br>
-			<button class="btn btn-warning btn-block" type="submit" name="do_login">Войти</button>
-		</form>
+				<br>
+				<button class="btn btn-warning btn-block" type="submit" name="do_login">Войти</button>
+			</form>
+		</div>
 	</div>
-
 </div>
 
 </form>
