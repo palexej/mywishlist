@@ -83,7 +83,7 @@
       <h2 style="text-align:center">Упс! Кажется, что-то пошло не так...</h2>
       К сожалению, мы не можем найти страницу, которую вы ищете :(
       <br>
-      <a href="http://awishlist/authAndLogin/cataloge">Вернуться на страницу каталога</a>
+      <a href="https://awishlist.herokuapp.com/cataloge.php">Вернуться на страницу каталога</a>
     </div>
   </div>
 </div>
