@@ -20,14 +20,14 @@
 
 <body >
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">awishlist</a>
+    <a class="navbar-brand" href="https://awishlist.herokuapp.com">awishlist</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="cataloge.php">Каталог</a>
+          <a class="nav-link" href="https://awishlist.herokuapp.com/cataloge.php">Каталог</a>
         </li>
       </ul>
       <?php if ( isset ($_SESSION['logged_user']) ) :

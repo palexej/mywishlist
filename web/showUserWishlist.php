@@ -26,14 +26,14 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">awishlist</a>
+    <a class="navbar-brand" href="https://awishlist.herokuapp.com">awishlist</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="cataloge ">Каталог</a>
+          <a class="nav-link" href="https://awishlist.herokuapp.com/cataloge.php ">Каталог</a>
         </li>
       </ul>
       <?php if ( isset ($_SESSION['logged_user']) ) :
@@ -45,15 +45,15 @@
               <i class="fa fa-fw fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="upload ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/upload.php ">
                 <i class="fa fa-fw fa-list-alt"></i>
                 Мои списки желаний
               </a>
-              <a class="dropdown-item" href="userProfile ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/userProfile.php ">
                 <i class="fa fa-fw fa-address-card"></i>
                 Настройки профиля
               </a>
-              <a class="dropdown-item" href="logout ">
+              <a class="dropdown-item" href="https://awishlist.herokuapp.com/logout.php ">
                 <i class="fa fa-fw fa-sign-out-alt"></i>
                 Выйти
               </a>
@@ -65,7 +65,7 @@
   <?php else :?>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="signup ">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
           <i class="fa fa-fw fa-user-plus"></i>
           Регистрация
         </a>
@@ -73,7 +73,7 @@
     </ul>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="login ">
+        <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
           <i class="fa fa-fw fa-sign-in-alt"></i>
           Авторизация
         </a>
@@ -96,7 +96,7 @@
 
       if ($wishlistsCount<=0)
       {
-        echo '<meta http-equiv="refresh" content="0;url= http://awishlist/authAndLogin/404 "> ';
+        echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/404.php "> ';
       }
       else
       {
