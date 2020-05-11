@@ -15,13 +15,7 @@
     width: 100%;
     height: 95%;
   }
-  body {
-    background: url(images-background/loginImg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+
   </style>
 </head>
 <body>
@@ -119,7 +113,7 @@
       <div class="carousel-caption text-left">
         <h5>В нашем каталоге нет нужного Вам желания?</h5>
         <p>Вы можете это исправить, добавив собственное желание в список. Это просто :)</p>
-        <a href="https://awishlist.herokuapp.com/addWishToList.php">
+        <a href="https://awishlist.herokuapp.com/upload.php">
           <button type="button" class="btn btn-info" name="button">Добавить своё желание в список</button>
         </a>
       </div>
