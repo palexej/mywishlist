@@ -13,7 +13,7 @@
   /* Make the image fully responsive */
   .carousel-inner img {
     width: 100%;
-    height: 100%;
+    height: 95%;
   }
   </style>
 </head>
@@ -88,7 +88,7 @@
   </ol>
   <div class="carousel-inner ">
     <div class="carousel-item active">
-      <img class="img-fluid" src="infoPage/infopage-newyear.jpg" alt="Новый год картинка">
+      <img class="img-fluid" src="infoPage/infoPage-newyear.jpg" alt="Новый год картинка">
       <div class="carousel-caption text-left">
         <h5>Впервые здесь?</h5>
         <p> Зарегистрируйтесь в системе, чтобы создать свой первый список желаний</p>
