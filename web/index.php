@@ -15,6 +15,13 @@
     width: 100%;
     height: 95%;
   }
+  body {
+    background: url(images-background/loginImg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   </style>
 </head>
 <body>
