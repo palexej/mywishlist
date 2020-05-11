@@ -197,7 +197,7 @@
 <br>
 <div class="alert alert-danger" role="alert">
 	<h4 class="alert-heading">Данная страница недоступна!</h4>
-	<p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/siqnup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+	<p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
 	<hr>
 </div>
 
