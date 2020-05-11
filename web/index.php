@@ -88,37 +88,33 @@
   </ol>
   <div class="carousel-inner ">
     <div class="carousel-item active">
-      <img class="img-fluid" src="images-background/404.jpg" alt="...">
+      <img class="img-fluid" src="infoPage/infopage-newyear.jpg" alt="Новый год картинка">
       <div class="carousel-caption text-left">
-        <h5>Title of the second slide</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <a href="http://awishlist/authAndLogin/login">
-            <button type="button" class="btn btn-info" name="button">ыыыыы</button>
-          </a>
-        </p>
-
+        <h5>Впервые здесь?</h5>
+        <p> Зарегистрируйтесь в системе, чтобы создать свой первый список желаний</p>
+        <a href="https://awishlist.herokuapp.com/signup.php">
+          <button type="button" class="btn btn-info" name="button">Зарегистрироваться</button>
+        </a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="img-fluid" src="images-background/bungalo.jpg" alt="...">
+      <img class="img-fluid" src="infoPage/infoPage-salute.jpg" alt="Картинка салюта">
       <div class="carousel-caption text-left">
-        <h5>Title of the second slide</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <a href="http://awishlist/authAndLogin/login">
-            <button type="button" class="btn btn-info" name="button">ыыыыы</button>
-          </a>
-        </p>
+        <h5>Нет идей для подарков?</h5>
+        <p>Советуем посмотреть товары в каталоге</p>
+        <a href="https://awishlist.herokuapp.com/cataloge.php">
+          <button type="button" class="btn btn-info" name="button">Перейти в каталог</button>
+        </a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="img-fluid" src="images-background/newyear-pic.jpg" alt="..." >
+      <img class="img-fluid" src="infoPage/infoPage-wedding.jpg" alt="Картинка свадьбы" >
       <div class="carousel-caption text-left">
-        <h5>Title of the second slide</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <a href="http://awishlist/authAndLogin/login">
-            <button type="button" class="btn btn-info" name="button">ыыыыы</button>
-          </a>
-        </p>
+        <h5>В нашем каталоге нет нужного Вам желания?</h5>
+        <p>Вы можете это исправить, добавив собственное желание в список. Это просто :)</p>
+        <a href="https://awishlist.herokuapp.com/addWishToList.php">
+          <button type="button" class="btn btn-info" name="button">Добавить своё желание в список</button>
+        </a>
       </div>
     </div>
   </div>
@@ -131,57 +127,54 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Следующий</span>
   </a>
-  <!-- </div> -->
-
 </div>
-
-
+<!--
 <div class="container marketing">
 
-  <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <br>
-      <br>
-      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-    </div>
-  </div>
+<div class="row featurette">
+<div class="col-md-7">
+<br>
+<br>
+<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+<div class="col-md-5">
+<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+</div>
+</div>
 
-  <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-    </div>
-  </div>
+<div class="row featurette">
+<div class="col-md-7 order-md-2">
+<h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+<div class="col-md-5 order-md-1">
+<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+</div>
+</div>
 
-  <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-    </div>
-  </div>
+<div class="row featurette">
+<div class="col-md-7">
+<h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+<div class="col-md-5">
+<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+</div>
+</div>
 
-  <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-  <!-- /END THE FEATURETTES -->
-
+<!-- /END THE FEATURETTES -->
+<!--
 </div><!-- /.container -->
 
-
+</body>
 
 </html>
