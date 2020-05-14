@@ -182,7 +182,7 @@
               <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>
 
               <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Информация:</b> '.$oneWishInfo.'</li>
+              <li class="list-group-item"><b>Подробная информация о желании:</b> '.$oneWishInfo.'</li>
               <li class="list-group-item"><b>Цена:</b> '.$oneWishPrice.''.$oneWishCurrency.'</li>
               <li class="list-group-item"><b>Ссылка:</b> <a href='.$oneWishLink.' target="_blank">'.$oneWishLink.'</a></li>
               </ul>
