@@ -135,7 +135,7 @@
 
 
           <ul class="list-group">
-          <li class="list-group-item"><b>>Детали мероприятия:</b> '.$showInfo.'</li>
+          <li class="list-group-item"><b>Детали мероприятия:</b> '.$showInfo.'</li>
           <li class="list-group-item"><b>Дата проведения мероприятия:</b> '.$showData.'</li>
           <li class="list-group-item"><b>Адрес проведения мероприятия:</b> '.$showAddress.'</li>
 
