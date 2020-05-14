@@ -168,7 +168,7 @@
               // <ul class="list-group">
               //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
               echo '
-              <div class="card border-dark text-left" style="  display: inline-block">';
+              <div class="card border-dark text-left  w-100" style="  display: inline-block">';
               if ($oneWishImg!='') {
 
                 echo '
