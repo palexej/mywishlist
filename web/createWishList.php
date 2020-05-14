@@ -138,7 +138,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text bg-white"><i class="fa fa-info"></i></span>
 							</div>
-							<textarea type="text" style="resize:vertical" name="wishlist_info" class="form-control" placeholder="Введите информацию о списке желаний" value=""></textarea>
+							<textarea type="text" style="resize:vertical" name="wishlist_info" class="form-control" placeholder="Опишите детали мероприятия" value=""></textarea>
 						</div>
 						<br>
 						<div class="input-group" >

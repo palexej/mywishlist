@@ -94,8 +94,8 @@
             if ($wishlistsCount==0){
               echo '
               <div class="alert alert-info" role="alert">
-              <h4 class="alert-heading">У вас отсутствуют списки желаний</h4>
-              <p>Нажмите на кнопку "cоздать новый список желаний", чтобы создать его.</p>
+              <h4 class="alert-heading">У Вас отсутствуют списки желаний</h4>
+              <p>Нажмите на кнопку "Создать новый список желаний"</p>
               <hr>
               </div>
               <br>';
@@ -139,7 +139,7 @@
                 </div>
                 <div id="showInfo'.$i.'" class="panel-collapse collapse">
                 <ul class="list-group">
-                <li class="list-group-item"><b>Информация о мероприятии:</b> '.$showInfo.'</li>
+                <li class="list-group-item"><b>Детали мероприятия:</b> '.$showInfo.'</li>
                 <li class="list-group-item"><b>Дата проведения мероприятия:</b> '.$showData.'</li>
                 <li class="list-group-item"><b>Адрес проведения мероприятия:</b> '.$showAddress.'</li>
 
@@ -174,7 +174,7 @@
                     // <ul class="list-group">
                     //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
                     echo '
-                    <div class="card border-dark text-left" style="  display: inline-block">';
+                    <div class="card border-dark text-left w-100" style="  display: inline-block">';
                     if ($oneWishImg!='') {
 
                       echo '
