@@ -226,7 +226,7 @@
             </div>
             <br>
             <br>
-            <button class="btn btn-warning btn-block" type="submit" name="addWishToList">Добавить желание в список</button>
+            <button class="btn btn-warning btn-block" id="do_signup" type="submit" name="addWishToList">Добавить желание в список</button>
           </form>
         </div>
       </div>
@@ -270,5 +270,11 @@ $(document).ready(function(){
 $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+
+<script type="text/javascript">
+$('#do_signup').click(function() {
+	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
 });
 </script>

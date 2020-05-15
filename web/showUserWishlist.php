@@ -283,7 +283,7 @@
                 <textarea type="text" style="resize:vertical" name="guestComment" class="form-control" placeholder="Вы можете оставить комментарий, он будет виден пользователю и другим гостям" value=""></textarea>
                 </div>
                 <br>
-                <button class="btn btn-success btn-block" type="submit" name="executeBtn">Выполнить желание</button>
+                <button id="do_signup" class="btn btn-success btn-block" type="submit" name="executeBtn">Выполнить желание</button>
                 </form>
                 </div>
                 ';
@@ -319,5 +319,8 @@
     <script type="text/javascript">
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
+    });
+    $('#do_signup').click(function() {
+      $('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
     });
     </script>

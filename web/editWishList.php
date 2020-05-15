@@ -166,7 +166,7 @@
 							<input type="text" name="address" class="form-control" placeholder="Введите адрес проведения мероприятия"  value='<?php echo $editWishListAddress ?>'><br/>
 						</div>
 						<br>
-						<button class="btn btn-info  btn-block" type="submit" name="saveWishListChanges">Сохранить изменения</button>
+						<button id="do_signup" class="btn btn-info  btn-block" type="submit" name="saveWishListChanges">Сохранить изменения</button>
 					</form>
 				</div>
 			</div>
@@ -229,5 +229,8 @@ $(function(){
 	$("#datepicker").datepicker({
 		minDate: 0
 	});
+});
+$('#do_signup').click(function() {
+	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
 });
 </script>

@@ -211,7 +211,7 @@
               <input type="text" name="middlename" class="form-control" placeholder="Введите отчество" value='<?php echo $editUserMiddlename?>'><br/>
             </div>
             <br>
-            <button class="btn btn-success btn-block" type="submit" name="do_signup">Сохранить изменения</button>
+            <button id="do_signup" class="btn btn-success btn-block" type="submit" name="do_signup">Сохранить изменения</button>
           </form>
 
           <br>
@@ -238,7 +238,7 @@
               <input type="password" name="repeatNewPassword" class="form-control" placeholder="Введите новый пароль снова" value=''><br/>
             </div>
             <br>
-            <button class="btn btn-success btn-block" type="submit" name="change_password">Сменить пароль</button>
+            <button id="do_signup" class="btn btn-success btn-block" type="submit" name="change_password">Сменить пароль</button>
           </form>
         </div>
       </div>
@@ -275,3 +275,9 @@
 </div>
 
 <?php endif; ?>
+
+<script type="text/javascript">
+$('#do_signup').click(function() {
+  $('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
+});
+</script>

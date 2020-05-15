@@ -271,6 +271,6 @@ if ( isset($data['do_signup']) )
 
 <script type="text/javascript">
 $('#do_signup').click(function() {
-	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Загрузка...').addClass('disabled');
+	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
 });
 </script>

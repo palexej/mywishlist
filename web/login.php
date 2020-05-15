@@ -113,7 +113,7 @@ if ( isset($data['do_login']) )
 					<input type="password" name="password" class="form-control" placeholder="Введите пароль" value="<?php echo @$data['password']; ?>"><br/>
 				</div>
 				<br>
-				<button class="btn btn-warning btn-block" type="submit" name="do_login">Войти</button>
+				<button id="do_signup" class="btn btn-warning btn-block" type="submit" name="do_login">Войти</button>
 			</form>
 		</div>
 	</div>
@@ -122,3 +122,9 @@ if ( isset($data['do_login']) )
 </form>
 </body>
 </html>
+
+<script type="text/javascript">
+$('#do_signup').click(function() {
+	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Пожалуйста, подождите...').addClass('disabled');
+});
+</script>

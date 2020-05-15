@@ -115,7 +115,7 @@
       }
 
       ?>
-      
+
       <div class="input-bar">
         <div class="input-bar-item width100">
           <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
@@ -160,13 +160,7 @@
         unset($data['searchField']);
 
       }
-      // elseif (isset($data['newBtn']))
-      // {
-      //   $productSearchByName=$data['searchField'];
-      //   $products = R::find('cataloge',"product_price >= 400");
-      //   $productsCount=R::count('cataloge',"product_price >= 400");
-      //   unset($data['newBtn']);
-      // }
+
     }
 
     if ($productsCount==0)
@@ -246,7 +240,7 @@
               echo '
               </select>
               <br>
-              <button type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" title="Добавить желание в список">
+              <button type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" id="do_signup" title="Добавить желание в список">
               <i class="fa fa-plus-circle"></i>
               </button>
               </form>
