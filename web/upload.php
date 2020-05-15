@@ -167,9 +167,7 @@
                     $oneWishLink=$oneWish->wish_link;
                     $oneWishImg=$oneWish->wish_img_path;
                     $oneWishCurrency =$oneWish->wish_currency_type;
-                    //
-                    // $oneWishWasTaken=$oneWish->wish_was_taken;
-                    // $oneWishGuestComment=$oneWish->wish_guest_comment;
+
 
                     $oneWishWasTaken=$oneWish->wish_was_taken;
                     $oneWishGuestComment=$oneWish->wish_guest_comment;
@@ -195,7 +193,7 @@
                     {
                       echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Ваше желание будет выполнено. Комментарий : '.$oneWishGuestComment.'"></i>';
                     }
-                    else
+                    elseif($oneWishWasTaken=="false")
                     {
                       echo '<i class="text-danger fa fa-fw fa-times-circle" data-toggle="tooltip" data-placement="right" title="Пока что никто не выполнил Ваше желание. Если кто-то из гостей выберет это желание, Вы увидите это здесь. "></i>';
                     }
