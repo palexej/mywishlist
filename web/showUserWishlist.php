@@ -31,7 +31,15 @@
     opacity: .8;
   }
 
-  </style>
+</style>
+
+
+<script type="text/javascript">
+$(window).load (function ()
+{
+  $(" .loader ").fadeOut ( "slow" );
+});
+</script>
 </head>
 <body>
   <div class="loader"></div>
@@ -329,10 +337,4 @@
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
-
-    $(window).load(function() {
-      $(".loader").fadeOut("slow");
-    });
-
-
     </script>
