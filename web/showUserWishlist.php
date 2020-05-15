@@ -20,15 +20,6 @@
     padding: 10px; /* Поля вокруг текста */
     border-radius: 5px; /* Уголки */
   }
-  .loader {
-    position: absolute;
-    margin: 0 auto;
-    z-index: 9999;
-    background: url('images-background/loading.gif') no-repeat;
-    top: 50 px;
-    cursor: wait;
-
-  }
 
 </style>
 

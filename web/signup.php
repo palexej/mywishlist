@@ -261,10 +261,16 @@ if ( isset($data['do_signup']) )
 				</div>
 				<br>
 				<div class="g-recaptcha" data-sitekey="6LdM2_QUAAAAAHx20W11zR-vufi6wucxiu_Q1THH" style="display: inline-block;"></div>
-				<button class="btn btn-success  btn-block" type="submit" name="do_signup">Зарегистрироваться</button>
+				<button class="btn btn-success  btn-block" type="submit" name="do_signup" id="do_signup">Зарегистрироваться</button>
 			</form>
 		</div>
 	</div>
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+$('#do_signup').click(function() {
+	$('#do_signup').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
+});
+</script>
