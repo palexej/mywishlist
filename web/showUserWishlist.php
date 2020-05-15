@@ -195,6 +195,55 @@
 
             }
           }
+
+          $findUserWishsCount = R::count('wishs',"wish_wishlist_id=?",array($wishlistID));
+          if ($findUserWishsCount>0)
+          {
+            $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+            echo '
+            <h3  style="text-align:center">Осуществить желание пользователя</h3>
+            <form  action='.$url.' method="post">
+            <div class="form-group">
+            <div class="input-group-prepend">
+            <span class="input-group-text bg-white"><i class="fa fa-list-ol"></i></span>
+            <select class="form-control" id="exampleFormControlSelect1" name="executeUserWish" data-toggle="tooltip" data-placement="right" title="Выберите желание пользователя, которое Вы хотите исполнить">
+            ';
+
+            $findUserWishs = R::find('wishs',"wish_wishlist_id=?",array($wishlistID));
+
+
+            foreach ($findUserWishs as $userWishsToЕxecute)
+            {
+              $userWishsToЕxecuteID=$userWishsToЕxecute->id;
+              $userWishsToЕxecuteName=$userWishsToЕxecute->wish_name;
+              $userWishsToЕxecuteWishWasTaken =$userWishsToЕxecute->wish_was_taken;
+              if ($userWishsToЕxecuteWishWasTaken=="false")
+              {
+                echo '  <option  value='.$userWishsToЕxecuteID.'>'.$userWishsToЕxecuteName.'</option>';
+              }
+
+            }
+            echo '
+            </select>
+            </div>
+            </div>
+            <div class="input-group">
+            <div class="input-group-prepend">
+            <span class="input-group-text bg-white"><i class="fa fa-comment-dots"></i></span>
+            </div>
+            <textarea type="text" style="resize:vertical" name="guestComment" class="form-control" placeholder="Вы можете оставить комментарий, он будет виден пользователю и другим гостям" value=""></textarea>
+            </div>
+            <br>
+            <button class="btn btn-success btn-block" type="submit" name="executeBtn">Выполнить желание</button>
+            </form>
+
+            ';
+
+
+
+          }
+
           echo '
 
           </div>
@@ -203,11 +252,33 @@
           ';
           $i++;
 
+          if (isset($_POST['executeBtn']))
+          {
+            $userWishID= $_POST['executeUserWish'];
+            $setTrueToThisWish = R::load('wishs',$userWishID);//автоматическое создание таблицы пользователей
+            $setTrueToThisWish->wish_was_taken="true";
+            $setTrueToThisWish->wish_guest_comment=$_POST['guestComment'];
+
+            R::store($setTrueToThisWish);
+
+            unset($_POST['executeBtn']);
+            echo '<meta http-equiv="refresh" content="0;url='.$url.' "> ';
+          }
+
         }
 
       }
       ?>
 
-    </div>
-  </body>
-  </html>
+    </body>
+    </html>
+
+
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    </script>
