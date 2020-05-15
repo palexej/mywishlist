@@ -210,7 +210,7 @@
             }
           }
 
-          $findUserWishsCount = R::count('wishs',"wish_was_taken=false");
+          $findUserWishsCount = R::count('wishs',"wish_was_taken='false'");
           if ($findUserWishsCount>0)
           {
             $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
