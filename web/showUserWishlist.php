@@ -20,11 +20,21 @@
     padding: 10px; /* Поля вокруг текста */
     border-radius: 5px; /* Уголки */
   }
+  .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images-background/loading.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+  }
 
   </style>
 </head>
 <body>
-
+  <div class="loader"></div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="https://awishlist.herokuapp.com">awishlist</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -315,13 +325,14 @@
 
     </body>
     </html>
-
-
-
-
     <script type="text/javascript">
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
+
+    $(window).load(function() {
+      $(".loader").fadeOut("slow");
+    });
+
 
     </script>
