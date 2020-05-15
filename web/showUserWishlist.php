@@ -165,6 +165,7 @@
               $oneWishImg=$oneWish->wish_img_path;
               $oneWishCurrency =$oneWish->wish_currency_type;
               $oneWishCanExecute=$oneWish->wish_was_taken;
+              $oneWishGuestComment=$oneWish->wish_guest_comment;
 
               // <ul class="list-group">
               //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
@@ -184,7 +185,7 @@
 
               if ($oneWishCanExecute=="true")
               {
-                echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Вы не можете выбрать это желание, так как оно было взято другим пользователем. Комментарий пользователя : '.$oneWishGuestComment.'"></i>';
+                echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Вы не можете выбрать это желание, так как оно было взято другим пользователем. Комментарий пользователя: '.$oneWishGuestComment.'"></i>';
               }
               elseif($oneWishCanExecute=="false")
               {
