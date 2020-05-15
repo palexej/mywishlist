@@ -96,7 +96,7 @@ if ( isset($data['do_login']) )
 <br>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 offset-md-2 text-center  text-center loginForm">
+		<div class="col-md-4 offset-md-4 text-center  text-center loginForm">
 			<h2>Вход</h2>
 			<form action="https://awishlist.herokuapp.com/login.php" method="POST">
 				<div class="input-group">
