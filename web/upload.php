@@ -190,10 +190,17 @@
                       ';
                     }
                     echo'
-
-                    <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>';
-
+                    <div class="card-header"><b>Название желания:</b> '.$oneWishName.'';
+                    if ($oneWishWasTaken=="true")
+                    {
+                      echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Ваше желание будет выполнено. Комментарий : '.$oneWishGuestComment.'"></i>';
+                    }
+                    else
+                    {
+                      echo '<i class="text-danger fa fa-fw fa-times-circle" data-toggle="tooltip" data-placement="right" title="Пока что никто не выполнил Ваше желание. Если кто-то из гостей выберет это желание, Вы увидите это здесь. "></i>';
+                    }
                     echo '
+
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>Информация о желании:</b> '.$oneWishInfo.'</li>
                     <li class="list-group-item"><b>Цена:</b> '.$oneWishPrice.''.$oneWishCurrency.'</li>

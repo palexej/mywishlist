@@ -283,7 +283,7 @@
         $addProdToWishlist->wish_link=$loadProductLink;
         $addProdToWishlist->wish_img_path=$myFile;//загружать ещё и картинку
         $addProdToWishlist->wish_currency_type=$loadProductCurrencyType;
-
+        $addProdToWishlist->wish_was_taken="false";
 
 
         R::store($addProdToWishlist);

@@ -144,6 +144,8 @@
         $addWish->wish_link=$data['wish_link'];
         $addWish->wish_img_path=$myFile;
         $addWish->wish_currency_type=$data['currencyType'];
+        $addWish->wish_was_taken="false";
+
 
         R::store($addWish);
 
