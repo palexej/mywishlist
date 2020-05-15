@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Список желаний пользователя</title>
 
   <?php require_once('dependence.php'); ?>
 
@@ -164,6 +164,7 @@
               $oneWishLink=$oneWish->wish_link;
               $oneWishImg=$oneWish->wish_img_path;
               $oneWishCurrency =$oneWish->wish_currency_type;
+              $oneWishCanExecute=$oneWish->wish_was_taken;
 
               // <ul class="list-group">
               //<img class="card-img-top  w-50 h-50 p-3" src="cataloge-images/notebook.png" alt='.$i.' >
@@ -179,7 +180,19 @@
               }
               echo'
 
-              <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>
+              <div class="card-header"><b>Название желания:</b> '.$oneWishName.'';
+
+              if ($oneWishCanExecute=="true")
+              {
+                echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Вы не можете выбрать это желание, так как оно было взято другим пользователем. Комментарий пользователя : '.$oneWishGuestComment.'"></i>';
+              }
+              elseif($oneWishCanExecute=="false")
+              {
+                echo '<i class="text-danger fa fa-fw fa-times-circle" data-toggle="tooltip" data-placement="right" title="Пока что никто не выполнил это желание. Вы можете его выбрать в списке в конце это страницы. "></i>';
+              }
+
+              echo '
+              </div>
 
               <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Подробная информация о желании:</b> '.$oneWishInfo.'</li>
@@ -196,7 +209,7 @@
             }
           }
 
-          $findUserWishsCount = R::count('wishs',"wish_wishlist_id=?",array($wishlistID));
+          $findUserWishsCount = R::count('wishs',"wish_was_taken=?",['false']);
           if ($findUserWishsCount>0)
           {
             $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -211,7 +224,6 @@
             ';
 
             $findUserWishs = R::find('wishs',"wish_wishlist_id=?",array($wishlistID));
-
 
             foreach ($findUserWishs as $userWishsToЕxecute)
             {
@@ -242,6 +254,10 @@
 
 
 
+          }
+          else
+          {
+            echo "Кажется, все желания этого пользователя будут выполнены";
           }
 
           echo '
