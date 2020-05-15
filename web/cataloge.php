@@ -240,7 +240,7 @@
               echo '
               </select>
               <br>
-              <button id="icon" type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" id="do_signup" title="Добавить желание в список">
+              <button id="icon" type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" title="Добавить желание в список">
               <i class="fa fa-plus-circle"></i>
               </button>
               </form>
