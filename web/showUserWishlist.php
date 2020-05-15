@@ -216,7 +216,7 @@
 
           </div>
           </div>
-          </div>
+
           ';
           $findUserWishsCount = R::count('wishs',"wish_was_taken='false'");
           if ($findUserWishsCount>0)
@@ -266,6 +266,8 @@
             echo "Кажется, все желания этого пользователя будут выполнены";
           }
           $i++;
+
+          echo '</div>';
 
           if (isset($_POST['executeBtn']))
           {
