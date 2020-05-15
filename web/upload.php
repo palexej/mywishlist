@@ -168,6 +168,9 @@
                     $oneWishImg=$oneWish->wish_img_path;
                     $oneWishCurrency =$oneWish->wish_currency_type;
 
+                    $oneWishWasTaken=$oneWish->wish_was_taken;
+                    $oneWishGuestComment=$oneWish->wish_guest_comment;
+
                     echo '
 
                     <div id="showMyWishs'.$i.'" class="panel-collapse collapse">';
@@ -185,8 +188,16 @@
                     }
                     echo'
 
-                    <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>
-
+                    <div class="card-header"><b>Название желания:</b> '.$oneWishName.'</div>';
+                    if ($oneWishWasTaken=="true")
+                    {
+                      echo '<i class="text-success fa fa-fw fa-check-circle" data-toggle="tooltip" data-placement="right" title="Ваше желание будет выполнено. Комментарий : '.$oneWishGuestComment.'"></i>';
+                    }
+                    elseif($oneWishWasTaken=="false")
+                    {
+                      echo '<i class="text-danger fa fa-fw fa-times-circle" data-toggle="tooltip" data-placement="right" title="Пока что никто не выполнил Ваше желание. Если кто-то из гостей выберет это желание, Вы увидите это здесь. "></i>';
+                    }
+                    echo '
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>Информация о желании:</b> '.$oneWishInfo.'</li>
                     <li class="list-group-item"><b>Цена:</b> '.$oneWishPrice.''.$oneWishCurrency.'</li>
@@ -220,112 +231,112 @@
               }
             }
             ?>
-          </form>
-        </div>
-      </div>
-    </body>
-    </html>
+            </form>
+            </div>
+            </div>
+            </body>
+            </html>
 
 
-    <?php
-    $data = $_POST;
-    if (isset( $data['deleteWishList'])) {
-      $id = $data['deleteWishList'];
-      $newwishlists = R::load('newwishlists', $id);//удаление элемента листа желаний по id
-      R::trash($newwishlists);
+            <?php
+            $data = $_POST;
+            if (isset( $data['deleteWishList'])) {
+              $id = $data['deleteWishList'];
+              $newwishlists = R::load('newwishlists', $id);//удаление элемента листа желаний по id
+              R::trash($newwishlists);
 
-      echo '<meta http-equiv="refresh" content="0">';
-      unset($data['deleteWishList']);
-      //обновление страницы
-    }
+              echo '<meta http-equiv="refresh" content="0">';
+              unset($data['deleteWishList']);
+              //обновление страницы
+            }
 
-    if (isset($data['createWishList'])) {
-      $_SESSION['logged_user'];
-    }
+            if (isset($data['createWishList'])) {
+              $_SESSION['logged_user'];
+            }
 
-    if (isset($data['addWishToList'])) {
-      $_SESSION['addWishToList']=$data['addWishToList'];
-      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/addWishToList.php "> ';
+            if (isset($data['addWishToList'])) {
+              $_SESSION['addWishToList']=$data['addWishToList'];
+              echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/addWishToList.php "> ';
 
-    }
+            }
 
-    if (isset( $_POST['editWishList']))
-    {
-      $editWishListSession=$data['editWishList'];
-      $_SESSION['editWishListId']=$editWishListSession;
-      echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/editWishList.php "> ';
-    }
+            if (isset( $_POST['editWishList']))
+            {
+              $editWishListSession=$data['editWishList'];
+              $_SESSION['editWishListId']=$editWishListSession;
+              echo '<meta http-equiv="refresh" content="0;url=https://awishlist.herokuapp.com/editWishList.php "> ';
+            }
 
-    if (isset( $_POST['editMyWish']))
-    {
-      $editMyWishSession=$data['editMyWish'];
-      $_SESSION['editMyWish']=$editMyWishSession;
-      echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/editMyWishInfo.php "> ';
-
-
-    }
-
-    if (isset( $_POST['deleteMyWish']))
-    {
-      $id = $data['deleteMyWish'];
-      $deleteTheWish = R::load('wishs', $id);//удаление элемента листа желаний по id
-      $deleteImg=$deleteTheWish->wish_img_path;
-      unlink($deleteImg);//удаление картинки из папки
-      R::trash($deleteTheWish);
-      echo '<meta http-equiv="refresh" content="0">';
-      unset($data['deleteMyWish']);
-
-    }
-
-    ?>
+            if (isset( $_POST['editMyWish']))
+            {
+              $editMyWishSession=$data['editMyWish'];
+              $_SESSION['editMyWish']=$editMyWishSession;
+              echo '<meta http-equiv="refresh" content="0;url= https://awishlist.herokuapp.com/editMyWishInfo.php "> ';
 
 
+            }
 
-  <?php else : ?>
-    <ul class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
-          <i class="fa fa-fw fa-user-plus"></i>
-          Регистрация
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
-          <i class="fa fa-fw fa-sign-in-alt"></i>
-          Авторизация
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<br>
-<div class="alert alert-danger" role="alert">
-  <h4 class="alert-heading">Данная страница недоступна</h4>
-  <p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
-  <hr>
-</div>
+            if (isset( $_POST['deleteMyWish']))
+            {
+              $id = $data['deleteMyWish'];
+              $deleteTheWish = R::load('wishs', $id);//удаление элемента листа желаний по id
+              $deleteImg=$deleteTheWish->wish_img_path;
+              unlink($deleteImg);//удаление картинки из папки
+              R::trash($deleteTheWish);
+              echo '<meta http-equiv="refresh" content="0">';
+              unset($data['deleteMyWish']);
 
-<?php endif; ?>
+            }
 
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();
-});
+            ?>
 
 
-$(".copyValue").click(function() {
-  var getBntVal=$(this).val();
 
-  var copytext2 = document.createElement('input');
-  copytext2.value = getBntVal;
-  document.body.appendChild(copytext2);
-  copytext2.select();
-  document.execCommand("copy");
-  document.body.removeChild(copytext2);
-  $(this).tooltip().text("Скопировано");
-  setTimeout(function() {window.location.reload();}, 1000);
+            <?php else : ?>
+            <ul class="navbar-nav ">
+            <li class="nav-item">
+            <a class="nav-link" href="https://awishlist.herokuapp.com/signup.php ">
+            <i class="fa fa-fw fa-user-plus"></i>
+            Регистрация
+            </a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ">
+            <li class="nav-item">
+            <a class="nav-link" href="https://awishlist.herokuapp.com/login.php ">
+            <i class="fa fa-fw fa-sign-in-alt"></i>
+            Авторизация
+            </a>
+            </li>
+            </ul>
+            </div>
+            </nav>
+            <br>
+            <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Данная страница недоступна</h4>
+            <p>Воспользуйтесь <a href="https://awishlist.herokuapp.com/login.php ">входом в систему</a> или <a href="https://awishlist.herokuapp.com/signup.php ">зарегистрируйтесь</a> для получения доступа к этой странице. </p>
+            <hr>
+            </div>
 
-});
-</script>
+            <?php endif; ?>
+
+            <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();
+            });
+
+
+            $(".copyValue").click(function() {
+              var getBntVal=$(this).val();
+
+              var copytext2 = document.createElement('input');
+              copytext2.value = getBntVal;
+              document.body.appendChild(copytext2);
+              copytext2.select();
+              document.execCommand("copy");
+              document.body.removeChild(copytext2);
+              $(this).tooltip().text("Скопировано");
+              setTimeout(function() {window.location.reload();}, 1000);
+
+            });
+            </script>
