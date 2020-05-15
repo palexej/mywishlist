@@ -87,6 +87,35 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 offset-md-2">
+      <?php
+      if ( isset ($_SESSION['logged_user'])=="false")
+      {
+        $user_login_int=$_SESSION['logged_user']->id;
+        $countUserWishlist=R::count('newwishlists',"user_login_id=?",array($user_login_int));
+        if ($countUserWishlist<=0)
+        {
+          echo '
+          <div class="alert alert-info col-md-8 offset-md-2 alert-dismissible fade show" role="alert" text-center>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4 class="alert-heading">Добавление желаний из каталога</h4>
+          <p>Чтобы добавить желания из каталога, Вам нужно создать хотя бы один список желаний </p>
+          </div>
+          ';
+        }
+      }
+      else
+      {
+        echo '
+        <div class="alert alert-info col-md-8 offset-md-2 alert-dismissible fade show" role="alert" text-center>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading">Добавление желаний из каталога</h4>
+        <p>Чтобы добавить желания из каталога, Вам нужно войти и создать хотя бы один список желаний </p>
+        </div>
+        ';
+      }
+
+      ?>
+      
       <div class="input-bar">
         <div class="input-bar-item width100">
           <form action="https://awishlist.herokuapp.com/cataloge.php" method="post" enctype="multipart/form-data">
