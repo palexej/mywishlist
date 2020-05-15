@@ -218,7 +218,7 @@
             </div>
 
             ';
-            $trueWishCount="false"
+            $trueWishCount="false";
             $findUserWishsCount = R::count('wishs',"wish_was_taken=?",array($trueWishCount));
             if ($findUserWishsCount>0)
             {
