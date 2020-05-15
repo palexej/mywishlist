@@ -113,10 +113,10 @@
                 <h5>'.$oneWishList->wishlist_name.'</h5>
                 <div class="text-right">
                 <div class="btn-group text-right role="group" aria-label="Basic example">
-                <button class="btn btn-outline-primary text-right copyValue"  data-toggle="tooltip" title="Нажмите, чтобы скопировать ссылку на список желаний в буфер обмена" type="button" id="getLink" name="getLink" value="https://awishlist.herokuapp.com/showUserWishlist.php?ID='.$id.'"  ><i class="fa fa-fw fa-link"></i></button>
-                <button class="btn btn-outline-success text-right"  data-toggle="tooltip" title="Добавить желание" type="submit" name="addWishToList" value='.$id.'  ><i class="fa fa-fw fa-plus"></i></button>
-                <button class="btn btn-outline-primary text-right"  data-toggle="tooltip" title="Редактировать список желаний" type="submit" name="editWishList" value='.$id.'  ><i class="fa fa-fw fa-edit"></i></button>
-                <button class="btn btn-outline-danger" type="submit" data-toggle="tooltip" title="Удалить список желаний" name="deleteWishList" value='.$id.' ><i class="fa fa-fw fa-trash-alt"></i></button>
+                <button id="icon" class="btn btn-outline-primary text-right copyValue"  data-toggle="tooltip" title="Нажмите, чтобы скопировать ссылку на список желаний в буфер обмена" type="button" id="getLink" name="getLink" value="https://awishlist.herokuapp.com/showUserWishlist.php?ID='.$id.'"  ><i class="fa fa-fw fa-link"></i></button>
+                <button id="icon"  class="btn btn-outline-success text-right"  data-toggle="tooltip" title="Добавить желание" type="submit" name="addWishToList" value='.$id.'  ><i class="fa fa-fw fa-plus"></i></button>
+                <button id="icon"  class="btn btn-outline-primary text-right"  data-toggle="tooltip" title="Редактировать список желаний" type="submit" name="editWishList" value='.$id.'  ><i class="fa fa-fw fa-edit"></i></button>
+                <button id="icon"  class="btn btn-outline-danger" type="submit" data-toggle="tooltip" title="Удалить список желаний" name="deleteWishList" value='.$id.' ><i class="fa fa-fw fa-trash-alt"></i></button>
                 </div>
                 </div>
                 </div>
@@ -339,5 +339,8 @@ $(".copyValue").click(function() {
   $(this).tooltip().text("Скопировано");
   setTimeout(function() {window.location.reload();}, 1000);
 
+});
+$('#icon').click(function() {
+	$('#icon').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>').addClass('disabled');
 });
 </script>

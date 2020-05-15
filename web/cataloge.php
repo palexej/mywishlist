@@ -240,7 +240,7 @@
               echo '
               </select>
               <br>
-              <button type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" id="do_signup" title="Добавить желание в список">
+              <button id="icon" type="submit"  name="addWishFromCataloge" value='.$productID.' class="btn btn-outline-success btn-block"  data-toggle="tooltip" id="do_signup" title="Добавить желание в список">
               <i class="fa fa-plus-circle"></i>
               </button>
               </form>
@@ -382,6 +382,9 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
+});
+$('#icon').click(function() {
+	$('#icon').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>').addClass('disabled');
 });
 
 </script>
