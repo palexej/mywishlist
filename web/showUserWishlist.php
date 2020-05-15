@@ -249,7 +249,7 @@
             }
             if ($falseUserWishInt==0)
             {
-              echo '  <option disabled>Невыполненных желаний нет</option>';
+              echo '  <option disabled default>Невыполненных желаний нет</option>';
               echo '
               </select>
               </div>
