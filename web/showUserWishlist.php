@@ -21,24 +21,22 @@
     border-radius: 5px; /* Уголки */
   }
   .loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    margin: 0 auto;
     z-index: 9999;
-    background: url('images-background/loading.gif') 50% 50% no-repeat rgb(249,249,249);
-    opacity: .8;
+    background: url('images-background/loading.gif') no-repeat;
+    top: 50 px;
+    cursor: wait;
+
   }
 
 </style>
-
-
-<script type="text/javascript">
-$(window).load (function ()
-{
-  $(" .loader ").fadeOut ( "slow" );
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(window).load(function(){
+  $('div.loading').fadeOut(1000);
 });
+</script>
 </script>
 </head>
 <body>
