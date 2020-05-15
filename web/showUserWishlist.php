@@ -15,7 +15,7 @@
     background-size: cover;
   }
   .WishList {
-    background: #87CEFA; /* Цвет фона */
+    background: #6495ED; /* Цвет фона */
     color: #fff; /* Цвет текста */
     padding: 10px; /* Поля вокруг текста */
     border-radius: 5px; /* Уголки */
@@ -249,7 +249,7 @@
             }
             if ($falseUserWishInt==0)
             {
-              echo '  <option disabled default>Невыполненных желаний нет</option>';
+              echo '  <option disabled selected>Невыполненных желаний нет</option>';
               echo '
               </select>
               </div>
