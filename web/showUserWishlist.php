@@ -31,10 +31,10 @@
   }
 
 </style>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <script>
 $(window).load(function(){
-  $('div.loading').fadeOut(1000);
+  $('div.loader').fadeOut(1000);
 });
 </script>
 </script>
