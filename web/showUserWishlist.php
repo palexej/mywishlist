@@ -264,7 +264,7 @@
                 <textarea disabled type="text" style="resize:vertical" name="guestComment" class="form-control" placeholder="Вы можете оставить комментарий, он будет виден пользователю и другим гостям" value=""></textarea>
                 </div>
                 <br>
-                <button class="btn btn-success btn-block disabled" type="submit" name="executeBtn">Выполнить желание</button>
+                <button class="btn btn-success btn-block " disabled type="submit" name="executeBtn">Выполнить желание</button>
                 </form>
                 </div>
                 ';
