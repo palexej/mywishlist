@@ -165,7 +165,6 @@
 
     if ($productsCount==0)
     {
-      
       echo '
       <div class="alert alert-info" role="alert">
       <h4 class="alert-heading">К сожалению, по Вашему запросу мы ничего не нашли :(</h4>
@@ -325,30 +324,33 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php if ($productsCount!=0)
+{
+  echo '
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="ID_prod_info"></p>
-        <p id="ID_prod_type"></p>
-        <p id="ID_prod_price"></p>
-        <p id="ID_prod_link"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-      </div>
-    </div>
+  <div class="modal-content">
+  <div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel"></h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
   </div>
-</div>
-</div>
-
+  <div class="modal-body">
+  <p id="ID_prod_info"></p>
+  <p id="ID_prod_type"></p>
+  <p id="ID_prod_price"></p>
+  <p id="ID_prod_link"></p>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>';
+}
+?>
 
 </body>
 </html>
@@ -385,7 +387,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
 $('#icon').click(function() {
-	$('#icon').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>').addClass('disabled');
+  $('#icon').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>').addClass('disabled');
 });
 
 </script>
