@@ -227,7 +227,7 @@
 
               echo '
               <br>
-              <div class="WishList col-md-8 offset-md-2 ">
+              <div class="WishList  ">
               <h3  style="text-align:center">Осуществить желание пользователя</h3>
               <form  action='.$url.' method="post">
               <div class="form-group">
@@ -256,7 +256,7 @@
                 echo '  <option disabled selected>Невыполненных желаний нет</option>';
                 echo '
                 </select>
-                </div>
+
                 </div>
                 <div class="input-group">
                 <div class="input-group-prepend">
@@ -267,6 +267,7 @@
                 <br>
                 <button class="btn btn-success btn-block " disabled type="submit" name="executeBtn">Выполнить желание</button>
                 </form>
+                </div>
                 </div>
                 ';
               }
