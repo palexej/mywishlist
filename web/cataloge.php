@@ -197,7 +197,7 @@
 
         <div class="text-right p-1">
 
-        <button type="button"  name="moreInfo" class="btn btn-outline-info"   data-toggle="modal" data-target="#exampleModal" data-product_ID='.$productID.' data-product_name='.$productName.' data-product_info='.$productInfo.'
+        <button type="button"  name="moreInfo" class="btn btn-outline-info"   data-toggle="modal" data-target="#exampleModal" data-product_ID='.$productID.' data-product_name='.$productName.' data-product_info="'.$productInfo.'"
         data-product_price='.$productPrice.' data-product_currency_type='.$productCurrencyType.' data-product_type='.$productType.' data-product_link='.$productLink.'>
         Подробнее
         <i class="fa fa-ellipsis-v"></i>
@@ -206,7 +206,7 @@
         </div>
 
 
-        <img class="card-img-top w-50 h-50" src="'.$productImgPath.'" alt='.$productName.'>
+        <img class="card-img-top w-75 h-75" src="'.$productImgPath.'" alt='.$productName.'>
         <div class="card-header">'.$productName.'</div>
         <div class="card-body">
         <p class="card-text">Цена: '.$productPrice.$productCurrencyType.'</p>
