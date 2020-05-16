@@ -256,7 +256,7 @@
                 echo '  <option disabled selected>Невыполненных желаний нет</option>';
                 echo '
                 </select>
-
+                </div>
                 </div>
                 <div class="input-group">
                 <div class="input-group-prepend">
@@ -268,7 +268,7 @@
                 <button class="btn btn-success btn-block " disabled type="submit" name="executeBtn">Выполнить желание</button>
                 </form>
                 </div>
-                </div>
+
                 ';
               }
               else
