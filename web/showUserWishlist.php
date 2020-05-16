@@ -227,7 +227,7 @@
 
               echo '
               <br>
-              <div class="WishList col-md-8 offset-md-2 ">
+              <div class="WishList ">
               <h3  style="text-align:center">Осуществить желание пользователя</h3>
               <form  action='.$url.' method="post">
               <div class="form-group">
