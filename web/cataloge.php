@@ -206,7 +206,7 @@
         </div>
 
 
-        <img class="card-img-top" src="'.$productImgPath.'" alt='.$productName.'>
+        <img class="card-img-top w-50 h-50" src="'.$productImgPath.'" alt='.$productName.'>
         <div class="card-header">'.$productName.'</div>
         <div class="card-body">
         <p class="card-text">Цена: '.$productPrice.$productCurrencyType.'</p>
