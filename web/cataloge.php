@@ -168,10 +168,9 @@
       echo '
       <div class="alert alert-info" role="alert">
       <h4 class="alert-heading">К сожалению, по Вашему запросу мы ничего не нашли :(</h4>
-      <hr>
-      <a href="https://awishlist.herokuapp.com/cataloge.php>Сбросить параметры поиска по каталогу</a>
-      </div>
+
       <br>';
+        echo '<meta http-equiv="refresh" content="3";url=" https://awishlist.herokuapp.com/cataloge.php "> ';
     }
     elseif($productsCount!=0)
     {
