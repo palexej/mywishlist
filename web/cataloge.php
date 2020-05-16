@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <?php require_once 'dependence.php' ?>
+  <?php require_once('dependence.php'); ?>
 
   <!-- Bootstrap DatePicker -->
 
@@ -165,13 +165,14 @@
 
     if ($productsCount==0)
     {
+      
       echo '
       <div class="alert alert-info" role="alert">
       <h4 class="alert-heading">К сожалению, по Вашему запросу мы ничего не нашли :(</h4>
       <p>
       <a href="https://awishlist.herokuapp.com/cataloge.php>Сбросить параметры поиска по каталогу</a>
       </p>
-      <hr>
+
       </div>
       <br>';
     }
