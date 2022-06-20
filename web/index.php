@@ -17,6 +17,7 @@
   }
 
   </style>
+  <title>Awishlist</title>
 </head>
 <body>
 
@@ -80,7 +81,8 @@
 
 <br>
 <br>
-<div id="carousel" class="carousel slide carousel-fade d-inline-block" data-ride="carousel">
+
+ <div id="carousel" class="carousel slide carousel-fade d-inline-block" data-ride="carousel">
   <!-- Индикаторы -->
   <ol class="carousel-indicators">
     <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -89,6 +91,8 @@
   </ol>
   <div class="carousel-inner ">
     <div class="carousel-item active">
+      <div class="d-flex min-vh-100">
+                
       <img class="img-fluid" src="infoPage/infoPage-newyear.jpg" alt="Новый год картинка">
       <div class="carousel-caption text-left">
         <h5>Впервые здесь?</h5>
@@ -97,8 +101,11 @@
           <button type="button" class="btn btn-info" name="button">Зарегистрироваться</button>
         </a>
       </div>
+      </div>
+
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item ">
+      <div class="d-flex align-items-center justify-content-center min-vh-100">
       <img class="img-fluid" src="infoPage/infoPage-salute.jpg" alt="Картинка салюта">
       <div class="carousel-caption text-left">
         <h5>Нет идей для подарков?</h5>
@@ -108,7 +115,9 @@
         </a>
       </div>
     </div>
+    </div>
     <div class="carousel-item">
+      <div class="d-flex align-items-center justify-content-center min-vh-100">
       <img class="img-fluid" src="infoPage/infoPage-wedding.jpg" alt="Картинка свадьбы" >
       <div class="carousel-caption text-left">
         <h5>В нашем каталоге нет нужного Вам желания?</h5>
@@ -117,6 +126,7 @@
           <button type="button" class="btn btn-info" name="button">Добавить своё желание в список</button>
         </a>
       </div>
+    </div>
     </div>
   </div>
   <!-- Элементы управления -->
@@ -129,6 +139,7 @@
     <span class="sr-only">Следующий</span>
   </a>
 </div>
+
 
 
 </body>
